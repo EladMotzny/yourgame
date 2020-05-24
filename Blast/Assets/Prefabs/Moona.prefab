@@ -191,7 +191,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7181224563942159706}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7014062649525496630
 SpriteRenderer:
@@ -272,7 +272,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7181224563942159706}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7013790991658459714
 SpriteRenderer:
@@ -515,7 +515,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7181224563942159706}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7013547380628123910
 SpriteRenderer:
@@ -592,11 +592,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7179529466255652852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.297, y: -0.392, z: 0}
+  m_LocalPosition: {x: -0.29699993, y: -0.3920002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7181224563942159706}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7013271258016662964
 SpriteRenderer:
@@ -820,7 +820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7181224563942159706}
   m_Layer: 0
-  m_Name: Chara_12
+  m_Name: Moona
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,10 +845,10 @@ Transform:
   - {fileID: 7185135710051428740}
   - {fileID: 7184972656135518220}
   - {fileID: 7185134291383419770}
+  - {fileID: 7185014044955539456}
   - {fileID: 7181115978698210084}
   - {fileID: 7185343527938215458}
   - {fileID: 7181413386445669780}
-  - {fileID: 7185014044955539456}
   - {fileID: 7184983110970350134}
   m_Father: {fileID: 0}
   m_RootOrder: 0
