@@ -1389,8 +1389,6 @@ MonoBehaviour:
   moveSpeed: 4
   leftKey: 276
   rightKey: 275
-  leftKey2: 0
-  rightKey2: 0
 --- !u!114 &1809506879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1459,10 +1457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  leftKey: 0
-  rightKey: 0
-  leftKey2: 97
-  rightKey2: 100
+  leftKey: 97
+  rightKey: 100
 --- !u!114 &1810423449
 MonoBehaviour:
   m_ObjectHideFlags: 0
