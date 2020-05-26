@@ -820,8 +820,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1793793749989009304}
   m_Layer: 0
-  m_Name: Chara_15
-  m_TagString: Untagged
+  m_Name: Mollu
+  m_TagString: Mollu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

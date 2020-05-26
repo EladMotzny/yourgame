@@ -415,8 +415,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7302389888520147786}
   m_Layer: 0
-  m_Name: Chara_14
-  m_TagString: Untagged
+  m_Name: Chey
+  m_TagString: Chey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
