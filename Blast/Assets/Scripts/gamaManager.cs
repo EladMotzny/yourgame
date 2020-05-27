@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
          */
         RightPlayerleft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftKey1", "LeftArrow")); //assigns to a key code
         RightPlayerright = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightKey1", "RightArrow"));
-        RightPlayershoot = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey1", "KeyPad0"));
+        RightPlayershoot = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey1", "L"));//Changed from KeyPad0
 
         LeftPlayerleft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftKey2", "A")); //assigns to a key code
         LeftPlayerright = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightKey2", "D"));
