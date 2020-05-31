@@ -12,10 +12,15 @@ public class GameManager : MonoBehaviour
     public KeyCode RightPlayerleft { get; set; }
     public KeyCode RightPlayerright { get; set; }
     public KeyCode RightPlayershoot { get; set; }
+    public KeyCode RightPlayerAimRight { get; set; }
+    public KeyCode RightPlayerAimLeft { get; set; }
+
 
     public KeyCode LeftPlayerleft { get; set; }
     public KeyCode LeftPlayerright { get; set; }
     public KeyCode LeftPlayershoot { get; set; }
+    public KeyCode LeftPlayerAimRight{ get; set; }
+    public KeyCode LeftPlayerAimLeft { get; set; }
 
 
 
@@ -40,10 +45,14 @@ public class GameManager : MonoBehaviour
         RightPlayerleft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftKey1", "LeftArrow")); //assigns to a key code
         RightPlayerright = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightKey1", "RightArrow"));
         RightPlayershoot = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey1", "L"));//Changed from KeyPad0
+        RightPlayerAimLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AimLeft1", "UpArrow"));
+        RightPlayerAimRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AimRight1", "DownArrow"));
 
         LeftPlayerleft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("LeftKey2", "A")); //assigns to a key code
         LeftPlayerright = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("RightKey2", "D"));
         LeftPlayershoot = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shootKey2", "Space"));
+        LeftPlayerAimLeft = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AimLeft2", "W"));
+        LeftPlayerAimRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AimRight2", "S"));
 
     }
 
