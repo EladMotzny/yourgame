@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class MenuScript : MonoBehaviour
 {
 
-
-
     public GameObject RightMenuPanel;
 
     public GameObject LeftMenuPanel;
@@ -71,6 +69,14 @@ public class MenuScript : MonoBehaviour
 
                 child.GetComponentInChildren<Text>().text = GameManager.GM.RightPlayershoot.ToString();
 
+            else if (child.name == "AimRightKey1")
+
+                child.GetComponentInChildren<Text>().text = GameManager.GM.RightPlayerAimRight.ToString();
+
+            else if (child.name == "AimLeftKey1")
+
+                child.GetComponentInChildren<Text>().text = GameManager.GM.RightPlayerAimLeft.ToString();
+
         }
 
         for (int i = 0; i < LeftMenuPanel.transform.childCount; i++)
@@ -89,6 +95,14 @@ public class MenuScript : MonoBehaviour
             else if (child.name == "shootKey2")
 
                 child.GetComponentInChildren<Text>().text = GameManager.GM.LeftPlayershoot.ToString();
+
+            else if (child.name == "AimLeftKey2")
+
+                child.GetComponentInChildren<Text>().text = GameManager.GM.LeftPlayerAimLeft.ToString();
+
+            else if (child.name == "AimRightKey2")
+
+                child.GetComponentInChildren<Text>().text = GameManager.GM.LeftPlayerAimRight.ToString();
 
         }
 
@@ -267,6 +281,28 @@ public class MenuScript : MonoBehaviour
 
                 break;
 
+            case "RightPlayerAimRight":
+
+                GameManager.GM.RightPlayerAimRight= newKey; //set aim right to new keycode
+
+                buttonText.text = GameManager.GM.RightPlayerAimRight.ToString(); //set button text to new key
+
+                PlayerPrefs.SetString("AimRightKey1", GameManager.GM.RightPlayerAimRight.ToString()); //save new key to playerprefs
+                Debug.Log("AimRightKey1 is " + GameManager.GM.RightPlayerAimRight.ToString());
+
+                break;
+
+            case "RightPlayerAimLeft":
+
+                GameManager.GM.RightPlayerAimLeft = newKey; //set aim left to new keycode
+
+                buttonText.text = GameManager.GM.RightPlayerAimLeft.ToString(); //set button text to new key
+
+                PlayerPrefs.SetString("AimLeftKey1", GameManager.GM.RightPlayerAimLeft.ToString()); //save new key to playerprefs
+                Debug.Log("AimLeftKey1 is " + GameManager.GM.RightPlayerAimLeft.ToString());
+
+                break;
+
 
             case "LeftPlayerleft":
 
@@ -298,6 +334,28 @@ public class MenuScript : MonoBehaviour
 
                 PlayerPrefs.SetString("shootKey2", GameManager.GM.LeftPlayershoot.ToString()); //save new key to playerprefs
                 Debug.Log("shootKey2 is " + GameManager.GM.LeftPlayershoot.ToString());
+
+                break;
+
+            case "LeftPlayerAimRight":
+
+                GameManager.GM.LeftPlayerAimRight= newKey; //set aim right to new keycode
+
+                buttonText.text = GameManager.GM.LeftPlayerAimRight.ToString(); //set button text to new key
+
+                PlayerPrefs.SetString("AimRightKey2", GameManager.GM.LeftPlayerAimRight.ToString()); //save new key to playerprefs
+                Debug.Log("AimRightKey2 is " + GameManager.GM.LeftPlayerAimRight.ToString());
+
+                break;
+
+            case "LeftPlayerAimLeft":
+
+                GameManager.GM.LeftPlayerAimLeft = newKey; //set aim left to new keycode
+
+                buttonText.text = GameManager.GM.LeftPlayerAimLeft.ToString(); //set button text to new key
+
+                PlayerPrefs.SetString("AimLeftKey2", GameManager.GM.LeftPlayerAimLeft.ToString()); //save new key to playerprefs
+                Debug.Log("AimLeftKey2 is " + GameManager.GM.LeftPlayerAimLeft.ToString());
 
                 break;
 

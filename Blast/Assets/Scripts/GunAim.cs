@@ -10,11 +10,15 @@ public class GunAim : MonoBehaviour
     [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
     [SerializeField] private Transform forceTransform;
     private SpriteMask forceSpriteMask;
+    [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
+    private float _horizontalInput = 0;
+    private float _verticalInput = 0;
 
     private void Awake()
     {
         
     }
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +30,25 @@ public class GunAim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))//rotate left
+        if (Input.GetKey(GameManager.GM.LeftPlayerAimLeft))
+        {
+            this.transform.Rotate(Vector3.forward, rotateSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetKey(GameManager.GM.LeftPlayerAimRight))
+        {
+            transform.Rotate(Vector3.forward, -rotateSpeed * Time.deltaTime);
+        }
+
+
+
+
+        if (Input.GetKey(GameManager.GM.RightPlayerAimLeft))
         {
             transform.Rotate(Vector3.forward, rotateSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))//rotate right
+        if (Input.GetKey(GameManager.GM.RightPlayerAimRight))
         {
             transform.Rotate(Vector3.forward, -rotateSpeed * Time.deltaTime);
         }
