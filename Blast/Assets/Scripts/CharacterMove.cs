@@ -39,7 +39,7 @@ public class CharacterMove : MonoBehaviour
                 if (!getRightDirection())//check if flipping is needed
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);//face left
-                    redLauncher.transform.rotation = Quaternion.Euler(0, 180, 90);//face left
+                    //redLauncher.transform.rotation = Quaternion.Euler(0, 180, 90);//face left
 
                     setRightDirection(true);
                 }
@@ -55,7 +55,7 @@ public class CharacterMove : MonoBehaviour
                 if (getRightDirection())//check if flipping is needed
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);//face right
-                    redLauncher.transform.rotation = Quaternion.Euler(0, 0, 90);//face right
+                    //redLauncher.transform.rotation = Quaternion.Euler(0, 0, 90);//face right
                     setRightDirection(false);
                 }
 
@@ -74,7 +74,7 @@ public class CharacterMove : MonoBehaviour
                 if (!getLeftDirection())//check if flipping is needed
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);//face left
-                    blueLauncher.transform.rotation = Quaternion.Euler(0, 0, 90);
+                    //blueLauncher.transform.rotation = Quaternion.Euler(0, 0, 90);
                     setLeftDirection(true);
                 }
 
@@ -91,7 +91,7 @@ public class CharacterMove : MonoBehaviour
                 if (getLeftDirection())//check if flipping is needed
                 {
                     transform.rotation = Quaternion.Euler(0, 180, 0);//face right
-                    blueLauncher.transform.rotation = Quaternion.Euler(0, 180, 90);
+                    //blueLauncher.transform.rotation = Quaternion.Euler(0, 180, 90);
                     setLeftDirection(false);
                 }
 
