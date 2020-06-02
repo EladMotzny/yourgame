@@ -7,6 +7,8 @@ TagManager:
   - Chey
   - Mullu
   - Mollu
+  - blueLauncher
+  - redLauncher
   layers:
   - Default
   - TransparentFX
