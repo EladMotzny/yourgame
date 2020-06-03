@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunAim : MonoBehaviour
+public class GunAimChey : MonoBehaviour
 {
-    [Tooltip("Rotation speed")] [SerializeField]  float rotateSpeed = 50f;
+    [Tooltip("Rotation speed")] [SerializeField] float rotateSpeed = 50f;
     private float holdDownStartTime;//Time where you start holding the button down
     [Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 2f;
     [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
@@ -16,7 +16,7 @@ public class GunAim : MonoBehaviour
 
     private void Awake()
     {
-        
+
     }
 
 
@@ -70,9 +70,9 @@ public class GunAim : MonoBehaviour
             Debug.Log("Button up");
             //send the calculated force to the shooting function with forceCalc here
         }
-      
+
     }
-  
+
     private float forceCalc(float holdTime)
     {
         float force = Mathf.Clamp01(holdTime / maxForceTime) * maxForce;
