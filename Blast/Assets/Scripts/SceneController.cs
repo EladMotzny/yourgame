@@ -12,11 +12,16 @@ public class SceneController : MonoBehaviour
 
     public void GoToKeysConfigScene()
     {
-        SceneManager.LoadScene("KeysConfig");
+        SceneManager.LoadScene("KeyMapping");
     }
 
     public void GoToGameScene()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void BackToWelcome()
+    {
+        SceneManager.LoadScene("Welcome");
     }
 }

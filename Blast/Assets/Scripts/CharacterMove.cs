@@ -9,22 +9,19 @@ public class CharacterMove : MonoBehaviour
     [Tooltip("Change to increase/decrease movement speed")] [SerializeField] float moveSpeed = 4f;
     [Tooltip("Change red rocket launcher")] [SerializeField] GameObject redLauncher;
     [Tooltip("Change blue rocket launcher")] [SerializeField] GameObject blueLauncher;
-    // [Tooltip("Change to control left movement")] [SerializeField] KeyCode leftKey;
-    // [Tooltip("Change to control right movement")] [SerializeField] KeyCode rightKey;
+   
+
     private bool LeftDirection; //false- right, true- left
     private bool RightDirection; //false- right, true- left
-    //public GameObject LeftPlayer;
-    //public GameObject RightPlayer;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        RightDirection = true;// the charcters always look at the left side at the beggining
+        RightDirection = true; // the charcters always look at the left side at the beggining
         LeftDirection = true;
-        //LeftPlayer = GetComponent<GameObject>();
-       // RightPlayer = GetComponent<GameObject>();
+     
         
     }
 

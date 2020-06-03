@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
@@ -9,6 +10,8 @@ public class MenuScript : MonoBehaviour
     public GameObject RightMenuPanel;
 
     public GameObject LeftMenuPanel;
+
+    public GameObject txt;
 
     Event keyEvent;
 
@@ -31,8 +34,21 @@ public class MenuScript : MonoBehaviour
 
         //menuPanel = transform.FindChild("Panel");
 
-        RightMenuPanel.gameObject.SetActive(false);
-        LeftMenuPanel.gameObject.SetActive(false);
+
+        if ("Game" == SceneManager.GetActiveScene().name || "KeyMapping" == SceneManager.GetActiveScene().name)
+        {
+            RightMenuPanel.gameObject.SetActive(false);
+            LeftMenuPanel.gameObject.SetActive(false);
+            txt.gameObject.SetActive(true);
+        }
+
+        if ("KeysConfig" == SceneManager.GetActiveScene().name)
+        {
+            RightMenuPanel.gameObject.SetActive(true);
+            LeftMenuPanel.gameObject.SetActive(true);
+            
+            
+        }
 
         waitingForKey = false;
 
@@ -115,20 +131,25 @@ public class MenuScript : MonoBehaviour
 
     {
 
-        //Escape key will open or close the panel
-
-        if (Input.GetKeyDown(KeyCode.Escape) && !RightMenuPanel.gameObject.activeSelf && !LeftMenuPanel.gameObject.activeSelf)
+        if ("Game" == SceneManager.GetActiveScene().name || "KeyMapping" == SceneManager.GetActiveScene().name)
         {
+            //Escape key will open or close the panel
 
-            RightMenuPanel.gameObject.SetActive(true);
-            LeftMenuPanel.gameObject.SetActive(true);
-        }
+            if (Input.GetKeyDown(KeyCode.Escape) && !RightMenuPanel.gameObject.activeSelf && !LeftMenuPanel.gameObject.activeSelf)
+            {
+                txt.gameObject.SetActive(false);
+                RightMenuPanel.gameObject.SetActive(true);
+                LeftMenuPanel.gameObject.SetActive(true);
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && RightMenuPanel.gameObject.activeSelf && LeftMenuPanel.gameObject.activeSelf)
-        {
+            }
 
-            RightMenuPanel.gameObject.SetActive(false);
-            LeftMenuPanel.gameObject.SetActive(false);
+            else if (Input.GetKeyDown(KeyCode.Escape) && RightMenuPanel.gameObject.activeSelf && LeftMenuPanel.gameObject.activeSelf)
+            {
+
+                RightMenuPanel.gameObject.SetActive(false);
+                LeftMenuPanel.gameObject.SetActive(false);
+                txt.gameObject.SetActive(true);
+            }
         }
 
     }
