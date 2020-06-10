@@ -9,6 +9,7 @@ TagManager:
   - Mollu
   - blueLauncher
   - redLauncher
+  - Ball
   layers:
   - Default
   - TransparentFX
