@@ -90,8 +90,12 @@ public class TutorialText : MonoBehaviour
                 break;
             case 8:
                 Debug.Log("Load scene");
-                SceneManager.LoadScene("Welcome");
+                welcomeScene();
                 break;
         }
+    }
+    public void welcomeScene()
+    {
+        SceneManager.LoadScene("Welcome");
     }
 }
