@@ -35,19 +35,20 @@ public class MenuScript : MonoBehaviour
         //menuPanel = transform.FindChild("Panel");
 
 
-        if ("Game" == SceneManager.GetActiveScene().name || "KeyMapping" == SceneManager.GetActiveScene().name)
+        if ("Game" == SceneManager.GetActiveScene().name)
         {
             RightMenuPanel.gameObject.SetActive(false);
             LeftMenuPanel.gameObject.SetActive(false);
-            txt.gameObject.SetActive(true);
+            
         }
 
-        if ("KeysConfig" == SceneManager.GetActiveScene().name)
+        if ("KeyMapping" == SceneManager.GetActiveScene().name)
         {
             RightMenuPanel.gameObject.SetActive(true);
             LeftMenuPanel.gameObject.SetActive(true);
-            
-            
+            txt.gameObject.SetActive(true);
+
+
         }
 
         waitingForKey = false;
@@ -131,7 +132,7 @@ public class MenuScript : MonoBehaviour
 
     {
 
-        if ("Game" == SceneManager.GetActiveScene().name || "KeyMapping" == SceneManager.GetActiveScene().name)
+        if ("KeyMapping" == SceneManager.GetActiveScene().name)
         {
             //Escape key will open or close the panel
 
@@ -149,6 +150,23 @@ public class MenuScript : MonoBehaviour
                 RightMenuPanel.gameObject.SetActive(false);
                 LeftMenuPanel.gameObject.SetActive(false);
                 txt.gameObject.SetActive(true);
+            }
+        }
+
+        if("Game" == SceneManager.GetActiveScene().name)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape) && !RightMenuPanel.gameObject.activeSelf && !LeftMenuPanel.gameObject.activeSelf)
+            {
+                RightMenuPanel.gameObject.SetActive(true);
+                LeftMenuPanel.gameObject.SetActive(true);
+
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Escape) && RightMenuPanel.gameObject.activeSelf && LeftMenuPanel.gameObject.activeSelf)
+            {
+
+                RightMenuPanel.gameObject.SetActive(false);
+                LeftMenuPanel.gameObject.SetActive(false);
             }
         }
 

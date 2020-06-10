@@ -1122,6 +1122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 50
+  maxForceTime: 2
+  maxForce: 500
+  forceTransform: {fileID: 694114957}
   rocketLauncher: {fileID: 477701470}
 --- !u!1 &479776507
 GameObject:
@@ -1646,6 +1649,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624580087}
   m_CullTransparentMesh: 0
+--- !u!1001 &634769455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.1997211
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.52811456
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.089794
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198128296361716709, guid: 19c1436ffe492b24e93ffb603437fe93,
+        type: 3}
+      propertyPath: m_Name
+      value: Force
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19c1436ffe492b24e93ffb603437fe93, type: 3}
 --- !u!1 &678133854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1813,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotateSpeed: 50
+  maxForceTime: 2
+  maxForce: 500
+  forceTransform: {fileID: 694114957}
   rocketLauncher: {fileID: 678133854}
 --- !u!1 &687123452
 GameObject:
@@ -1820,6 +1895,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687123452}
   m_CullTransparentMesh: 0
+--- !u!4 &694114957 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6198128296361716708, guid: 19c1436ffe492b24e93ffb603437fe93,
+    type: 3}
+  m_PrefabInstance: {fileID: 634769455}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &696585010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,6 +3735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightMenuPanel: {fileID: 1738976619}
   LeftMenuPanel: {fileID: 782119319}
+  txt: {fileID: 0}
 --- !u!114 &1348798981
 MonoBehaviour:
   m_ObjectHideFlags: 0

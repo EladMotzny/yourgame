@@ -5,14 +5,21 @@ using UnityEngine;
 public class GunAim : MonoBehaviour
 {
     [Tooltip("Rotation speed")] [SerializeField]  float rotateSpeed = 50f;
-    private float holdDownStartTime;//Time where you start holding the button down
+
+   // private float holdDownStartTime;//Time where you start holding the button down
+
     [Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 2f;
-    [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
-    [SerializeField] private Transform forceTransform;
-    private SpriteMask forceSpriteMask;
+
+   // [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
+   
+   // [SerializeField] private Transform forceTransform;
+
     [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
+
     private float _horizontalInput = 0;
     private float _verticalInput = 0;
+
+  
 
     private void Awake()
     {
@@ -23,21 +30,23 @@ public class GunAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        forceSpriteMask = forceTransform.Find("mask").GetComponent<SpriteMask>();
-        HideForce();
+        //forceSpriteMask = forceTransform.Find("mask").GetComponent<SpriteMask>();
+        //HideForce();
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(GameManager.GM.LeftPlayerAimLeft))
+        if (Input.GetKey(GameManager.GM.LeftPlayerAimLeft))
         {
-            this.transform.Rotate(Vector3.forward, rotateSpeed * Time.deltaTime);
+            if (this.CompareTag("blueLauncher"))
+                this.transform.Rotate(Vector3.forward, rotateSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(GameManager.GM.LeftPlayerAimRight))
         {
-            transform.Rotate(Vector3.forward, -rotateSpeed * Time.deltaTime);
+            if (this.CompareTag("blueLauncher"))
+                this.transform.Rotate(Vector3.forward, -rotateSpeed * Time.deltaTime);
         }
 
 
@@ -45,35 +54,43 @@ public class GunAim : MonoBehaviour
 
         if (Input.GetKey(GameManager.GM.RightPlayerAimLeft))
         {
-            transform.Rotate(Vector3.forward, rotateSpeed * Time.deltaTime);
+            if (this.CompareTag("redLauncher"))
+            transform.Rotate(Vector3.forward, -rotateSpeed * Time.deltaTime);
         }
 
         if (Input.GetKey(GameManager.GM.RightPlayerAimRight))
         {
-            transform.Rotate(Vector3.forward, -rotateSpeed * Time.deltaTime);
-        }*/
+            if (this.CompareTag("redLauncher"))
+                transform.Rotate(Vector3.forward, rotateSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown("space"))//Start charging
+        }
+
+       /* if (Input.GetKeyDown(GameManager.GM.RightPlayershoot) || Input.GetKeyDown(GameManager.GM.LeftPlayershoot))//Start charging
         {
             Debug.Log("Button down");
             holdDownStartTime = Time.time;
         }
-        if (Input.GetKey("space"))//Mid charge
+        if (Input.GetKey(GameManager.GM.RightPlayershoot) || Input.GetKeyDown(GameManager.GM.LeftPlayershoot))//Mid charge
         {
             Debug.Log("charging...");
             float currHoldTime = Time.time - holdDownStartTime;
             ShowForce(forceCalc(currHoldTime));
         }
-        if (Input.GetKeyUp("space"))//End charge
+        if (Input.GetKeyUp(GameManager.GM.RightPlayershoot) || Input.GetKeyUp(GameManager.GM.LeftPlayershoot))//End charge
         {
             float holdTime = Time.time - holdDownStartTime;
             Debug.Log("Button up");
             //send the calculated force to the shooting function with forceCalc here
+
+            var vec = new Vector3(10, 10, 0); //x: float, y: float, z: float)
+            rb.AddForce(vec); // , Impluse);*/
+
+
         }
       
     }
   
-    private float forceCalc(float holdTime)
+   /* private float forceCalc(float holdTime)
     {
         float force = Mathf.Clamp01(holdTime / maxForceTime) * maxForce;
         return force;
@@ -88,5 +105,5 @@ public class GunAim : MonoBehaviour
     public void ShowForce(float force)
     {
         forceSpriteMask.alphaCutoff = 1 - force / maxForce;
-    }
-}
+    }*/
+
