@@ -5265,6 +5265,7 @@ MonoBehaviour:
   rocketLauncher: {fileID: 1651064614}
   maxForceTime: 2
   maxForce: 500
+  speed: 4
 --- !u!50 &1888121426
 Rigidbody2D:
   serializedVersion: 4
