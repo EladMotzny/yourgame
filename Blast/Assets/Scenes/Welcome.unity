@@ -574,8 +574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161, y: 113}
-  m_SizeDelta: {x: 600.0884, y: 364.1411}
+  m_AnchoredPosition: {x: -165, y: 113}
+  m_SizeDelta: {x: 636.71436, y: 364.1411}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1093348053
 MonoBehaviour:
@@ -609,7 +609,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bubble Blast
+  m_Text: Treasure Blast!
 --- !u!222 &1093348054
 CanvasRenderer:
   m_ObjectHideFlags: 0
