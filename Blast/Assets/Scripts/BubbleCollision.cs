@@ -15,8 +15,8 @@ public class BubbleCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-        transform.position += movement * Time.deltaTime * moveSpeed;
+        //Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        //transform.position += movement * Time.deltaTime * moveSpeed;
     }
     
     //In order for this to work the bubbles need to have RigidBody2d on them

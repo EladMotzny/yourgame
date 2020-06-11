@@ -10,6 +10,10 @@ TagManager:
   - blueLauncher
   - redLauncher
   - Ball
+  - RedBall
+  - BlueBall
+  - GreenBall
+  - YellowBall
   layers:
   - Default
   - TransparentFX
