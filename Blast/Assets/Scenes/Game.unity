@@ -4624,6 +4624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623670580}
   - component: {fileID: 623670579}
+  - component: {fileID: 623670581}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4657,6 +4658,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &623670581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623670578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d324541b26b0c024ebd3bc13de3648aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  openMax: 10
+  openMin: 3
+  closeMax: 10
+  closeMin: 3
+  timeStartedLerping: 0
+  lerpTime: 0
+  startPositionUpWall: {x: 0, y: 0}
+  endPositionUpWall: []
+  startPositionDownWall: {x: 0, y: 0}
+  endPositionDownWall: []
+  uppperWall: {fileID: 1161585127}
+  downWall: {fileID: 1387183723}
 --- !u!1 &624580087
 GameObject:
   m_ObjectHideFlags: 0
@@ -7516,6 +7542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1161585126}
   - component: {fileID: 1161585125}
+  - component: {fileID: 1161585127}
   m_Layer: 0
   m_Name: UpperWall
   m_TagString: Untagged
@@ -7569,6 +7596,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+--- !u!114 &1161585127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161585124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc7c85ff5c3a8e4392af24609c12034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStartedLerping: 1
+  lerpTime: 1
+  startPositionWall: {x: -0.14, y: 0.28}
+  endPositionWall:
+  - {x: -0.14, y: 0.4}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
 --- !u!1 &1184849782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9036,6 +9082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1387183722}
   - component: {fileID: 1387183721}
+  - component: {fileID: 1387183723}
   m_Layer: 0
   m_Name: LowerWall
   m_TagString: Untagged
@@ -9089,6 +9136,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1387183723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387183720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc7c85ff5c3a8e4392af24609c12034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStartedLerping: 1
+  lerpTime: 1
+  startPositionWall: {x: -0.14, y: -0.33}
+  endPositionWall:
+  - {x: -0.14, y: 0.28}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
 --- !u!1 &1395770846
 GameObject:
   m_ObjectHideFlags: 0
