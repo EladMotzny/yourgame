@@ -876,10 +876,10 @@ GameObject:
   m_Component:
   - component: {fileID: 98647585}
   - component: {fileID: 98647584}
-  - component: {fileID: 98647583}
   - component: {fileID: 98647582}
   - component: {fileID: 98647581}
   - component: {fileID: 98647580}
+  - component: {fileID: 98647583}
   m_Layer: 8
   m_Name: MolluBall
   m_TagString: Mollu
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 98647579}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541132313c40aea4b94fc2bbbe06c8ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 735c385685583324e92b165713f2eb9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
@@ -8896,7 +8896,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 947951091
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1348798984
