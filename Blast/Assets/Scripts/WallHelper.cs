@@ -12,7 +12,7 @@ public class WallHelper : MonoBehaviour
     [Tooltip("Maximum delay for walls to close")] [SerializeField] int closeMin = 3;
     private System.Random rnd = new System.Random();
 
-
+    /*
     private bool shouldLerp = false;
     public float timeStartedLerping;
     public float lerpTime;
@@ -20,6 +20,7 @@ public class WallHelper : MonoBehaviour
     [Tooltip("The end coordinates for the upper wall")] [SerializeField] public Vector2[] endPositionUpWall;//3 positions
     [Tooltip("The start coordinates for the down wall")] [SerializeField] public Vector2 startPositionDownWall;
     [Tooltip("The end coordinates for the down wall")] [SerializeField] public Vector2[] endPositionDownWall;//3 positions
+    */
     public WallMover uppperWall;
     public WallMover downWall;
     //public Transform downWall;

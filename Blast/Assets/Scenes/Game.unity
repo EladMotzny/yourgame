@@ -4675,12 +4675,6 @@ MonoBehaviour:
   openMin: 3
   closeMax: 10
   closeMin: 3
-  timeStartedLerping: 0
-  lerpTime: 0
-  startPositionUpWall: {x: 0, y: 0}
-  endPositionUpWall: []
-  startPositionDownWall: {x: 0, y: 0}
-  endPositionDownWall: []
   uppperWall: {fileID: 1161585127}
   downWall: {fileID: 1387183723}
 --- !u!1 &624580087
@@ -7612,9 +7606,9 @@ MonoBehaviour:
   lerpTime: 1
   startPositionWall: {x: -0.14, y: 0.28}
   endPositionWall:
-  - {x: -0.14, y: 0.4}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: -0.14, y: 2.29}
+  - {x: -0.14, y: 1.28}
+  - {x: -0.14, y: -0.63}
 --- !u!1 &1184849782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9152,9 +9146,9 @@ MonoBehaviour:
   lerpTime: 1
   startPositionWall: {x: -0.14, y: -0.33}
   endPositionWall:
-  - {x: -0.14, y: 0.28}
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
+  - {x: -0.14, y: -0.14}
+  - {x: -0.14, y: -1.47}
+  - {x: -0.14, y: -3.2}
 --- !u!1 &1395770846
 GameObject:
   m_ObjectHideFlags: 0
