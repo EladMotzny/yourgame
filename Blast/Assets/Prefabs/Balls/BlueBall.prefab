@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1273163579234501610}
   - component: {fileID: 1273163579234501606}
   m_Layer: 0
-  m_Name: 2 (1)
+  m_Name: BlueBall
   m_TagString: BlueBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1273163579234501613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.7447536, y: -1.8693678, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198aa1569adc21641afac8c4994116a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!50 &1273163579234501606
 Rigidbody2D:
   serializedVersion: 4

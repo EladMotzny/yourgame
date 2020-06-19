@@ -5,7 +5,7 @@ using UnityEngine;
 public class BubbleCollision : MonoBehaviour
 {
 
-    public float moveSpeed = 0f;
+    //public float moveSpeed = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +28,6 @@ public class BubbleCollision : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
+
     }
 }
