@@ -23,12 +23,20 @@ public class GameManager : MonoBehaviour
     public KeyCode LeftPlayerAimRight { get; set; }
     public KeyCode LeftPlayerAimLeft { get; set; }
 
-
+    public int numberOfBubblesRight;
+    public int numberOfBubblesLeft;
+    public Transform[] levelsRight;
+    public Transform[] levelsLeft;
+    private int currentLevelIndexRight;
+    private int currentLevelIndexLeft;
+    public int scoreLeft;
+    public int scoreRight;
 
 
 
     void Awake()//assign gm
     {
+        
         //Singleton pattern
         if (GM == null)
         {
@@ -39,7 +47,7 @@ public class GameManager : MonoBehaviour
         {
                 Destroy(gameObject);   
         }
-     
+        
         
         
 
@@ -65,11 +73,82 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        numberOfBubblesLeft = levelsLeft[0].transform.childCount;
+        Debug.Log("number of bubbles in left: " + numberOfBubblesLeft);
+        numberOfBubblesRight = levelsRight[0].transform.childCount;
+        currentLevelIndexLeft = 0;
+
 
     }
 
     void Update()
     {
 
+    }
+
+    //Will be called when a hit is detected. Score will be updated according to if the player hit the other player or a bubble
+    public void updateScoreLeft(int score)
+    {
+        scoreLeft += score;
+    }
+
+    //Will get called when a ball on the left side is hit
+    public void updateNumberOfBubblesLeft()
+    {
+        numberOfBubblesLeft--;
+        //check if the game is over
+        if(numberOfBubblesLeft <= 0)
+        {
+            if(currentLevelIndexLeft <= levelsLeft.Length)
+            {
+                //left player win, change to left player win scene
+            }
+            else
+            {
+                //there are still levels left, load the next one
+                LoadLevelLeft();
+            }
+        }
+    }
+
+    void LoadLevelLeft()
+    {
+        currentLevelIndexLeft++;
+        Instantiate(levelsLeft[currentLevelIndexLeft], Vector2.zero, Quaternion.identity);
+        numberOfBubblesLeft = levelsLeft[currentLevelIndexLeft].transform.childCount;
+
+    }
+
+
+
+
+    public void updateNumberOfBubblesRight()
+    {
+        numberOfBubblesRight--;
+        //check if the game is over
+        if (numberOfBubblesRight <= 0)
+        {
+            if (currentLevelIndexRight <= levelsRight.Length)
+            {
+                //left player win, change to left player win scene
+            }
+            else
+            {
+                //there are still levels left, load the next one
+                LoadLevelLeft();
+            }
+        }
+    }
+
+
+    void LoadLevelRight()
+    {
+        currentLevelIndexRight++;
+        Instantiate(levelsRight[currentLevelIndexRight], Vector2.zero, Quaternion.identity);
+        numberOfBubblesRight = levelsRight[currentLevelIndexRight].transform.childCount;
+    }
+    public void updateScoreRight(int score)
+    {
+        scoreRight += score;
     }
 }
