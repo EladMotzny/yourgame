@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         LeftPlayerAimRight = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("AimRight2", "S"));
 
     }
-
+    
     void Start()
     {
         numberOfBubblesLeft = levelsLeft[0].transform.childCount;
@@ -99,13 +99,14 @@ public class GameManager : MonoBehaviour
         //check if the game is over
         if(numberOfBubblesLeft <= 0)
         {
-            if(currentLevelIndexLeft <= levelsLeft.Length)
+            if(currentLevelIndexLeft <= levelsLeft.Length - 1)
             {
                 //left player win, change to left player win scene
             }
             else
             {
                 //there are still levels left, load the next one
+                Debug.Log("Change level");
                 LoadLevelLeft();
             }
         }
@@ -128,14 +129,14 @@ public class GameManager : MonoBehaviour
         //check if the game is over
         if (numberOfBubblesRight <= 0)
         {
-            if (currentLevelIndexRight <= levelsRight.Length)
+            if (currentLevelIndexRight <= levelsRight.Length - 1)
             {
                 //left player win, change to left player win scene
             }
             else
             {
                 //there are still levels left, load the next one
-                LoadLevelLeft();
+                LoadLevelRight();
             }
         }
     }
@@ -151,4 +152,5 @@ public class GameManager : MonoBehaviour
     {
         scoreRight += score;
     }
+    
 }

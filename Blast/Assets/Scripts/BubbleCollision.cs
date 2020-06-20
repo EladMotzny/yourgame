@@ -7,6 +7,7 @@ public class BubbleCollision : MonoBehaviour
 
     //public float moveSpeed = 0f;
     // Start is called before the first frame update
+    public GameManager GM;
     void Start()
     {
         
@@ -27,6 +28,7 @@ public class BubbleCollision : MonoBehaviour
             Debug.Log("Same color collision detected!");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+            GM.updateNumberOfBubblesLeft();
         }
 
     }
