@@ -23,12 +23,12 @@ public class BubbleCollision : MonoBehaviour
     //In order for this to work the bubbles need to have RigidBody2d on them
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag(gameObject.tag)|| collision.gameObject.CompareTag("Chey") || collision.gameObject.CompareTag("Mollu"))
+        if(collision.gameObject.CompareTag(gameObject.tag))
         {
             Debug.Log("Same color collision detected!");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-            GM.updateNumberOfBubblesLeft();
+           // GM.updateNumberOfBubblesLeft();
         }
 
     }

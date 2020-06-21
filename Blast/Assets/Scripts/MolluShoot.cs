@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -14,23 +15,21 @@ public class MolluShoot : MonoBehaviour
     [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
     bool shoot;
     public float speed = 0.05f;
-    public Transform bubble;
+    Transform bubble;
     Transform newBubble;
     public CircleCollider2D cd;
+    public Transform[] colors;
 
 
 
     void Start()
     {
        shoot = false;
-        
-        
-        rb = bubble.GetComponent<Rigidbody2D>();
-   
-        cd = bubble.GetComponent<CircleCollider2D>();
-        cd.enabled = false;
 
-        bubble.position = rocketLauncher.transform.GetChild(0).position;
+        CreateBubble();
+        
+        
+       
     }
 
     void Update()
@@ -57,9 +56,8 @@ public class MolluShoot : MonoBehaviour
 
             //ShowForce(forceCalc(currHoldTime));
         }
-        if (Input.GetKeyUp(GameManager.GM.RightPlayershoot))//End charge
+        if (Input.GetKeyUp(GameManager.GM.RightPlayershoot) && !shoot)//End charge
         {
-            // Cheyshoot = true;
             shoot = true;
             float holdTime = Time.time - holdDownStartTime;
             Debug.Log("Button up");
@@ -69,99 +67,8 @@ public class MolluShoot : MonoBehaviour
 
             Invoke("activateCollision", 1);
             Invoke("CreateBubble", 1);
+            
         }
-
-
-
-
-
-
-
-
-
-        //Debug.Log("the bubble position is: " + transform.position.y);
-        /*  if (!Cheyshoot)
-          {
-              bubble.transform.position = rocketLauncher.transform.GetChild(0).position;
-              rb.velocity = Vector2.zero;
-          }
-         /* else if (Cheyshoot)
-          {
-              if (this.CompareTag("Chey"))
-              {
-                  rb.velocity = rocketLauncher.transform.right * speed;
-                  Invoke("activateCollision", 1);
-              }
-          }*/
-
-        /*  if (!Mollushoot)
-          {
-              bubble.transform.position = rocketLauncher.transform.GetChild(0).position;
-              rb.velocity = Vector2.zero;
-          }
-         /* else if (Mollushoot)
-          {
-              if (this.CompareTag("Mollu"))
-              {
-
-              }
-          }*/
-
-        /*
-                if (Input.GetKeyDown(GameManager.GM.RightPlayershoot))//Start charging
-                {
-                    Debug.Log("Button down");
-                    holdDownStartTime = Time.time;
-                }
-                if (Input.GetKey(GameManager.GM.RightPlayershoot))//Mid charge
-                {
-                    Debug.Log("charging...");
-                    float currHoldTime = Time.time - holdDownStartTime;
-
-                    //ShowForce(forceCalc(currHoldTime));
-                }
-                if (Input.GetKeyUp(GameManager.GM.RightPlayershoot))//End charge
-                {
-                   // Cheyshoot = true;
-                    Mollushoot = true;
-                    float holdTime = Time.time - holdDownStartTime;
-                    Debug.Log("Button up");
-                    //send the calculated force to the shooting function with forceCalc here
-                    // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
-                    // rb.AddForce(Vector2.up * 2); // , Impluse);
-
-                    if (CompareTag("Mollu"))
-                    {
-                        rb.velocity = rocketLauncher.transform.right * speed;
-                        Invoke("activateCollision", 1);
-                        Invoke("CreateBubble", 1);
-
-                    }
-
-
-
-                }
-                if (Input.GetKeyUp(GameManager.GM.LeftPlayershoot))//End charge
-                {
-                    Cheyshoot = true;
-                    Mollushoot = true;
-                    float holdTime = Time.time - holdDownStartTime;
-                    Debug.Log("Button up");
-                    //send the calculated force to the shooting function with forceCalc here
-                    // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
-                    // rb.AddForce(Vector2.up * 2); // , Impluse);
-
-                    if (CompareTag("Chey"))
-                    {
-                        rb.velocity = rocketLauncher.transform.right * speed;
-                        Invoke("activateCollision", 1);
-                        Invoke("CreateBubble", 1);
-
-                    }
-
-
-
-                }*/
     }
 
 
@@ -184,8 +91,18 @@ public class MolluShoot : MonoBehaviour
 
     public void CreateBubble()
     {
-        newBubble = Instantiate(bubble, rocketLauncher.transform.GetChild(0).position, rocketLauncher.transform.GetChild(0).rotation);
-        bubble = newBubble;
+        shoot = false;
+        int rand = UnityEngine.Random.Range(0, 3);
+        bubble = Instantiate(colors[rand], rocketLauncher.transform.GetChild(0).position, rocketLauncher.transform.GetChild(0).rotation);
+
+        rb = bubble.GetComponent<Rigidbody2D>();
+
+        cd = bubble.GetComponent<CircleCollider2D>();
+        cd.enabled = false;
+
+        bubble.position = rocketLauncher.transform.GetChild(0).position;
+
+
     }
 
     public void activateCollision()
