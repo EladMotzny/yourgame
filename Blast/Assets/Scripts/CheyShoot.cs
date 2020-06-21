@@ -62,6 +62,8 @@ public class CheyShoot : MonoBehaviour
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             // rb.AddForce(Vector2.up * 2); // , Impluse);
 
+            speed = forceCalc(holdTime);
+
             Invoke("activateCollision", 1);
             Invoke("CreateBubble", 1);
         }
@@ -71,7 +73,11 @@ public class CheyShoot : MonoBehaviour
 
     private float forceCalc(float holdTime)
     {
-        float force = Mathf.Clamp01(holdTime / maxForceTime) * maxForce;
+        if (holdTime >= maxForceTime)
+        {
+            holdTime = maxForceTime;
+        }
+        float force = holdTime / maxForceTime * maxForce;
         return force;
 
     }
@@ -96,6 +102,8 @@ public class CheyShoot : MonoBehaviour
 
         cd = bubble.GetComponent<CircleCollider2D>();
         cd.enabled = false;
+
+        bubble.tag = "CheyBall" + bubble.tag;
 
         bubble.position = rocketLauncher.transform.GetChild(0).position;
 
