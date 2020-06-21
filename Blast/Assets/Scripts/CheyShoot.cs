@@ -43,12 +43,12 @@ public class CheyShoot : MonoBehaviour
         }
         if (Input.GetKeyDown(GameManager.GM.LeftPlayershoot))//Start charging
         {
-            Debug.Log("Button down");
+            //Debug.Log("Button down");
             holdDownStartTime = Time.time;
         }
         if (Input.GetKey(GameManager.GM.LeftPlayershoot))//Mid charge
         {
-            Debug.Log("charging...");
+            //Debug.Log("charging...");
             float currHoldTime = Time.time - holdDownStartTime;
 
             //ShowForce(forceCalc(currHoldTime));
@@ -57,7 +57,7 @@ public class CheyShoot : MonoBehaviour
         {
             shoot = true;
             float holdTime = Time.time - holdDownStartTime;
-            Debug.Log("Button up");
+            //Debug.Log("Button up");
             //send the calculated force to the shooting function with forceCalc here
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             // rb.AddForce(Vector2.up * 2); // , Impluse);
