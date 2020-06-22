@@ -38,8 +38,16 @@ public class CheyShoot : MonoBehaviour
         }
         else
         {
-            rb.velocity = rocketLauncher.transform.right * speed;
-            Invoke("activateCollision", 1);
+            if (rb != null)
+            {
+                rb.velocity = rocketLauncher.transform.right * speed;
+                Invoke("activateCollision", 1);
+            }
+            else
+            {
+                Destroy(rb);
+            }
+
         }
         if (Input.GetKeyDown(GameManager.GM.LeftPlayershoot))//Start charging
         {
@@ -111,7 +119,14 @@ public class CheyShoot : MonoBehaviour
 
     public void activateCollision()
     {
-        cd.enabled = true;
+        if (cd != null)
+        {
+            cd.enabled = true;
+        }
+        if (cd == null)
+        {
+            Destroy(cd);
+        }
     }
 }
 

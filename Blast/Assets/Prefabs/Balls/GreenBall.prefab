@@ -113,6 +113,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 0}
+  blackBall: {fileID: 7338648789427839189, guid: 20b609f6d46e42749b2c18f71d9f9e28,
+    type: 3}
+  colors:
+  - {fileID: 81349416036547968, guid: 7b3d0e0af1d10c441939664e128d91d2, type: 3}
+  - {fileID: 1273163579234501609, guid: 28025f12831731142ac9f6189f3f18dd, type: 3}
+  - {fileID: 3195340703784753991}
+  - {fileID: 3699357172524559037, guid: 7971e66b20a7fbe4e8360570a4cd7240, type: 3}
 --- !u!50 &4828341587785529493
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +136,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8f28134cdaad85641984b88d1f44ae5c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 2
   m_CollisionDetection: 0
