@@ -78,11 +78,7 @@ public class BubbleCollision : MonoBehaviour
             Destroy(this.gameObject);
             // GM.updateNumberOfBubblesLeft();
         }
-        else //hit a bubble not in the same color, freeze in place
-        {
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            
-        }
+        
 
 
         //Mollu hits a ball on Cheys side
@@ -154,6 +150,12 @@ public class BubbleCollision : MonoBehaviour
             }
             Destroy(this.gameObject);
             // GM.updateNumberOfBubblesLeft();
+        }
+
+        else //hit a bubble not in the same color, freeze in place
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
         }
 
     }
