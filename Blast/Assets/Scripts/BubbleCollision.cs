@@ -6,6 +6,9 @@ public class BubbleCollision : MonoBehaviour
 {
 
     //public float moveSpeed = 0f;
+    public Rigidbody2D rb;
+
+
     // Start is called before the first frame update
     public GameManager GM;
     void Start()
@@ -33,6 +36,7 @@ public class BubbleCollision : MonoBehaviour
         else if (collision.gameObject.CompareTag(gameObject.tag))
         {
             Debug.Log("Same color collision detected!");
+            Destroy(this.gameObject);
         }
 
         else if (collision.gameObject.CompareTag("MolluBallRedBall") && this.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("CheyBallRedBall") && this.gameObject.CompareTag("RedBall"))
@@ -65,6 +69,11 @@ public class BubbleCollision : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             // GM.updateNumberOfBubblesLeft();
+        }
+        else //hit a bubble not in the same color, freeze in place
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            
         }
 
     }
