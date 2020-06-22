@@ -101,7 +101,7 @@ public class CharacterMove : MonoBehaviour
 
     public bool getLeftDirection()
     {
-        Debug.Log("the direction is " + this.LeftDirection);
+        //Debug.Log("the direction is " + this.LeftDirection);
         return this.LeftDirection;
         
     }
@@ -113,7 +113,7 @@ public class CharacterMove : MonoBehaviour
 
     public bool getRightDirection()
     {
-        Debug.Log("the direction is " + this.RightDirection);
+        //Debug.Log("the direction is " + this.RightDirection);
         return this.RightDirection;
 
     }

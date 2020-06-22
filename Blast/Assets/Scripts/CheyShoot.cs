@@ -15,6 +15,7 @@ public class CheyShoot : MonoBehaviour
     bool shoot;
     public float speed = 0.05f;
     Transform bubble;
+    private string tag;
     public CircleCollider2D cd;
     public Transform[] colors;
 
@@ -69,7 +70,7 @@ public class CheyShoot : MonoBehaviour
             //send the calculated force to the shooting function with forceCalc here
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             // rb.AddForce(Vector2.up * 2); // , Impluse);
-
+            bubble.tag = "CheyBall" + tag;
             speed = forceCalc(holdTime);
 
             Invoke("activateCollision", 1);
@@ -105,13 +106,13 @@ public class CheyShoot : MonoBehaviour
         shoot = false;
         int rand = UnityEngine.Random.Range(0, 3);
         bubble = Instantiate(colors[rand], rocketLauncher.transform.GetChild(0).position, rocketLauncher.transform.GetChild(0).rotation);
-
+        tag = bubble.tag;
         rb = bubble.GetComponent<Rigidbody2D>();
 
         cd = bubble.GetComponent<CircleCollider2D>();
         cd.enabled = false;
 
-        bubble.tag = "CheyBall" + bubble.tag;
+        bubble.tag = "Ball";
 
         bubble.position = rocketLauncher.transform.GetChild(0).position;
 

@@ -46,7 +46,7 @@ public class WallHelper : MonoBehaviour
         WallMover.pos = position;
         uppperWall.StartLerping();
         downWall.StartLerping();
-        Debug.Log("OPEN Wait for " + sec + " seconds");
+        //Debug.Log("OPEN Wait for " + sec + " seconds");
         yield return new WaitForSeconds(sec);
         StartCoroutine(closeWall());
     }
@@ -58,7 +58,7 @@ public class WallHelper : MonoBehaviour
         WallMover.pos = 3;
         uppperWall.StartLerping();
         downWall.StartLerping();
-        Debug.Log("CLOSE Wait for " + sec + " seconds");
+        //Debug.Log("CLOSE Wait for " + sec + " seconds");
         yield return new WaitForSeconds(sec);
         StartCoroutine(openWall());
     }
