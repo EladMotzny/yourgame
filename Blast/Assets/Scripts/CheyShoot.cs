@@ -18,14 +18,17 @@ public class CheyShoot : MonoBehaviour
     public CircleCollider2D cd;
     public Transform[] colors;
 
-
+    public GameObject LeftInfoPanel;
+    Transform nextBubble;
+    int rand;
 
     void Start()
     {
-       shoot = false;
+        shoot = false;
 
-        CreateBubble();
+        nextBubble = createNextLeftBubble();
 
+        CreateBubble(UnityEngine.Random.Range(0, 4));
 
     }
 
@@ -73,7 +76,7 @@ public class CheyShoot : MonoBehaviour
             speed = forceCalc(holdTime);
 
             Invoke("activateCollision", 1);
-            Invoke("CreateBubble", 1);
+            Invoke("nextBubbleAssign", 1);
         }
 
     }
@@ -100,11 +103,11 @@ public class CheyShoot : MonoBehaviour
         forceSpriteMask.alphaCutoff = 1 - force / maxForce;
     }
 
-    public void CreateBubble()
+    public void CreateBubble(int next)
     {
         shoot = false;
-        int rand = UnityEngine.Random.Range(0, 3);
-        bubble = Instantiate(colors[rand], rocketLauncher.transform.GetChild(0).position, rocketLauncher.transform.GetChild(0).rotation);
+    
+        bubble = Instantiate(colors[next], rocketLauncher.transform.GetChild(0).position, rocketLauncher.transform.GetChild(0).rotation);
 
         rb = bubble.GetComponent<Rigidbody2D>();
 
@@ -127,6 +130,38 @@ public class CheyShoot : MonoBehaviour
         {
             Destroy(cd);
         }
+    }
+
+
+    public Transform createNextLeftBubble()
+    {
+        rand = UnityEngine.Random.Range(0, 4);
+        Transform newBubble = Instantiate(colors[rand], LeftInfoPanel.transform.GetChild(1).position, LeftInfoPanel.transform.GetChild(1).rotation);
+
+
+        Rigidbody2D rb = newBubble.GetComponent<Rigidbody2D>();
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        CircleCollider2D cd = newBubble.GetComponent<CircleCollider2D>();
+        cd.enabled = false;
+
+        newBubble.tag = "newBall";
+
+        newBubble.position = LeftInfoPanel.transform.GetChild(1).position;
+        newBubble.transform.SetAsLastSibling();
+
+        return newBubble;
+
+
+    }
+
+    //assign the next ball to the rocket ball and change it
+    public void nextBubbleAssign()
+    {
+        CreateBubble(rand);
+        Destroy(nextBubble.gameObject);
+        nextBubble = createNextLeftBubble();
+
     }
 }
 
