@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,8 +28,8 @@ public class GameManager : MonoBehaviour
     public int numberOfBubblesLeft;
     public Transform[] levelsRight;
     public Transform[] levelsLeft;
-    private int currentLevelIndexRight;
-    private int currentLevelIndexLeft;
+    public int currentLevelIndexRight;
+    public int currentLevelIndexLeft;
     public int scoreLeft;
     public int scoreRight;
 
@@ -151,6 +152,52 @@ public class GameManager : MonoBehaviour
     public void updateScoreRight(int score)
     {
         scoreRight += score;
+    }
+
+    public bool checkFreeBubbles(int color)
+    {
+        
+
+        Debug.Log("color= " + levelsRight[0].transform.childCount);
+        Transform level = levelsRight[currentLevelIndexRight];
+       
+        int count = 0;
+
+        for (int i = 0; i < level.childCount; i++)
+
+        {
+            Transform child = level.GetChild(i);
+            if(child.CompareTag("RedBall") && color==0)
+            {
+                Debug.Log("I am in");
+                count++;
+            }
+            if (child.CompareTag("BlueBall") && color == 1)
+            {
+                count++;
+            }
+            if (child.CompareTag("GreenBall") && color == 2)
+            {
+                count++;
+            }
+            if (child.CompareTag("YellowBall") && color == 3)
+            {
+                count++;
+            }
+
+        }
+
+        Debug.Log("count= " + count);
+        if (count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+               
     }
     
 }

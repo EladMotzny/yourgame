@@ -18,6 +18,7 @@ public class MolluShoot : MonoBehaviour
     Transform bubble;
     public CircleCollider2D cd;
     public Transform[] colors;
+    public GameManager GM;
 
 
     public GameObject RightInfoPanel;
@@ -150,7 +151,13 @@ public class MolluShoot : MonoBehaviour
     //create the next ball
     public Transform createNextRightBubble()
     {
+        
         rand = UnityEngine.Random.Range(0, 4);
+        bool exist = GameManager.GM.checkFreeBubbles(rand);
+        Debug.Log("bool= " + exist.ToString());
+        
+
+
         Transform newBubble = Instantiate(colors[rand], RightInfoPanel.transform.GetChild(1).position, RightInfoPanel.transform.GetChild(1).rotation);
 
 
@@ -179,6 +186,8 @@ public class MolluShoot : MonoBehaviour
         nextBubble = createNextRightBubble();
         
     }
+
+   
 }
 
 
