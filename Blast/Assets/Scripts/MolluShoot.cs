@@ -16,6 +16,7 @@ public class MolluShoot : MonoBehaviour
     bool shoot;
     public float speed = 0.05f;
     Transform bubble;
+    private string Temptag;
     public CircleCollider2D cd;
     public Transform[] colors;
 
@@ -59,13 +60,13 @@ public class MolluShoot : MonoBehaviour
 
         if (Input.GetKeyDown(GameManager.GM.RightPlayershoot))//Start charging
         {
-            Debug.Log("Button down");
+            //Debug.Log("Button down");
             holdDownStartTime = Time.time;
         }
 
         if (Input.GetKey(GameManager.GM.RightPlayershoot))//Mid charge
         {
-            Debug.Log("charging...");
+            //Debug.Log("charging...");
             float currHoldTime = Time.time - holdDownStartTime;
 
            // ShowForce(forceCalc(currHoldTime));
@@ -75,14 +76,14 @@ public class MolluShoot : MonoBehaviour
         {
             shoot = true;
             float holdTime = Time.time - holdDownStartTime;
-            Debug.Log("Button up");
+            //Debug.Log("Button up");
 
             //send the calculated force to the shooting function with forceCalc here
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             //rb.AddForce(Vector2.up * 2); // , Impluse);
-
+            
             speed = forceCalc(holdTime);
-
+            bubble.tag = "CheyBall" + Temptag;
             Invoke("activateCollision", 1);
             Invoke("nextBubbleAssign", 1);
 
@@ -123,12 +124,12 @@ public class MolluShoot : MonoBehaviour
         bubble = Instantiate(colors[next], rocketLauncher.transform.GetChild(0).position, rocketLauncher.transform.GetChild(0).rotation);
 
         rb = bubble.GetComponent<Rigidbody2D>();
-
+        Temptag = bubble.tag;
         cd = bubble.GetComponent<CircleCollider2D>();
         cd.enabled = false;
 
 
-        bubble.tag = "MolluBall"+ bubble.tag;
+        bubble.tag = "MolluBall";
 
         bubble.position = rocketLauncher.transform.GetChild(0).position;
 

@@ -16,8 +16,8 @@ public class GunAim : MonoBehaviour
 
     [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
 
-    private float _horizontalInput = 0;
-    private float _verticalInput = 0;
+    //private float _horizontalInput = 0;
+    //private float _verticalInput = 0;
 
   
 
