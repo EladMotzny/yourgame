@@ -140,3 +140,6 @@ MonoBehaviour:
   - {fileID: 1273163579234501609, guid: 28025f12831731142ac9f6189f3f18dd, type: 3}
   - {fileID: 3195340703784753991, guid: 4ebe4eeb96412b44bb0903c5104fdbed, type: 3}
   - {fileID: 3699357172524559037, guid: 7971e66b20a7fbe4e8360570a4cd7240, type: 3}
+  MolluRocketLauncher: {fileID: 5417842199463400095, guid: 2d888f19a0b2aa248a9f2cfa733adfca,
+    type: 3}
+  CheyRocketLauncher: {fileID: 0}

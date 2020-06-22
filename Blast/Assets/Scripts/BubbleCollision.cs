@@ -10,6 +10,8 @@ public class BubbleCollision : MonoBehaviour
     public GameManager GM;
     public Transform blackBall;
     public Transform[] colors;
+   // [Tooltip("Mollu Launcher")] [SerializeField] GameObject MolluRocketLauncher;
+   // [Tooltip("Chey Launcher")] [SerializeField] GameObject CheyRocketLauncher;
     void Start()
     {
         
@@ -79,20 +81,30 @@ public class BubbleCollision : MonoBehaviour
         //Mollu hits a ball on Cheys side
         else if ((collision.gameObject.CompareTag("MolluBallYellowBall") || collision.gameObject.CompareTag("MolluBallGreenBall") || collision.gameObject.CompareTag("MolluBallBlueBall") || collision.gameObject.CompareTag("MolluBallRedBall")) && this.transform.position.x < 0.14)
         {
-            Debug.Log("Freeze Cheys ball!");
             Destroy(collision.gameObject);
-            Instantiate(blackBall, this.transform.position, this.transform.rotation);
-            Destroy(this.gameObject);
+
+           
+               // Debug.Log("Freeze Chey!");
+           
+                Debug.Log("Freeze Cheys ball!");
+                Instantiate(blackBall, this.transform.position, this.transform.rotation);
+                Destroy(this.gameObject);
+           // }
             // GM.updateNumberOfBubblesLeft();
         }
 
         //Chey hits a ball on Mollus side
         else if ((collision.gameObject.CompareTag("CheyBallYellowBall") || collision.gameObject.CompareTag("CheyBallGreenBall") || collision.gameObject.CompareTag("CheyBallBlueBall") || collision.gameObject.CompareTag("CheyBallRedBall")) && this.transform.position.x > 0.14)
         {
-            Debug.Log("Freeze Mollus ball!");
             Destroy(collision.gameObject);
-            Instantiate(blackBall, this.transform.position, this.transform.rotation);
-            Destroy(this.gameObject);
+
+            
+               // Debug.Log("Freeze Mollu!");
+            
+                Debug.Log("Freeze Mollus ball!");
+                Instantiate(blackBall, this.transform.position, this.transform.rotation);
+                Destroy(this.gameObject);
+            
             // GM.updateNumberOfBubblesLeft();
         }
 
