@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3446823930233164659}
-  GM: {fileID: 0}
   blackBall: {fileID: 7338648789427839189, guid: 20b609f6d46e42749b2c18f71d9f9e28,
     type: 3}
   colors:
@@ -113,7 +112,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2975982175359377878}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

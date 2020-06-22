@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BubbleCollision : MonoBehaviour
 {
 
-    //public float moveSpeed = 0f;
     public Rigidbody2D rb;
 
-    // Start is called before the first frame update
     //public GameManager GM;
     public Transform blackBall;
     public Transform[] colors;
-   // [Tooltip("Mollu Launcher")] [SerializeField] GameObject MolluRocketLauncher;
-   // [Tooltip("Chey Launcher")] [SerializeField] GameObject CheyRocketLauncher;
     void Start()
     {
         
@@ -29,15 +26,11 @@ public class BubbleCollision : MonoBehaviour
     //In order for this to work the bubbles need to have RigidBody2d on them
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("I hit: " + collision.tag);
-        // When the ball reaches the screen edge or the wall it disappears
-
+        //if ball hit edge or ball in barrel, destroy what hit
         if (collision.gameObject.CompareTag("edge"))
         { 
             Destroy(this.gameObject);
-        }
-
-
+        }    
         /*
         //Hit same color ball which has the same tag -DO NOT DESTROY
         else if (collision.gameObject.CompareTag(gameObject.tag))
@@ -167,29 +160,26 @@ public class BubbleCollision : MonoBehaviour
             // GM.updateNumberOfBubblesLeft();
         }
 
+        else if (collision.gameObject.CompareTag("MolluBall"))
+        {
+            //Mollu lost, change scene to cheywin
+            SceneManager.LoadScene("CheyWon");
+        }
+        else if (collision.gameObject.CompareTag("CheyBall"))
+        {
+            //Chey lost, change scene to Molluwin
+            
+        }
+
         //hit a bubble not in the same color, freeze in place unless its in the chamber
         //|| !collision.CompareTag("Chey") || !collision.CompareTag("Mollu")
-        else if (!collision.CompareTag("Ball"))
+        else
         {
+            //Debug.Log("I DIDNT HIT BALL");
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
-        else if (collision.CompareTag("Chey"))
-        {
-            Debug.Log("HIT CHEY MOTHERFUCKEasdasdasdasdR");
         }
         
 
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Chey "))
-        {
-            Debug.Log("HIT CHEY MOTHERFUCKER");
-            
-
-        }
-    }
-
 
 }
