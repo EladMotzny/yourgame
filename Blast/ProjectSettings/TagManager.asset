@@ -23,6 +23,7 @@ TagManager:
   - CheyBallGreenBall
   - CheyBallYellowBall
   - BlackBall
+  - newBall
   layers:
   - Default
   - TransparentFX
