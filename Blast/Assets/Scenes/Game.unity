@@ -2175,9 +2175,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   forceSpriteMask: {fileID: 282150922}
   rocketLauncher: {fileID: 678133854}
-  maxForceTime: 1
-  maxForce: 10
-  speed: 4
+  speed: 6
   cd: {fileID: 0}
   colors:
   - {fileID: 1273163579234501609, guid: 28025f12831731142ac9f6189f3f18dd, type: 3}
@@ -5440,9 +5438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   rocketLauncher: {fileID: 1651064614}
-  maxForceTime: 1
-  maxForce: 10
-  speed: 4
+  speed: 6
   cd: {fileID: 0}
   colors:
   - {fileID: 1273163579234501609, guid: 28025f12831731142ac9f6189f3f18dd, type: 3}
@@ -6118,7 +6114,7 @@ CapsuleCollider2D:
   m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.09206203, y: -0.53470904}

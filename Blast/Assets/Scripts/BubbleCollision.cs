@@ -27,7 +27,7 @@ public class BubbleCollision : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //if ball hit edge or ball in barrel, destroy what hit
-        if (collision.gameObject.CompareTag("edge"))
+        if (collision.gameObject.CompareTag("edge") && (!this.gameObject.CompareTag("CheyBall") || !this.gameObject.CompareTag("MolluBall")))
         { 
             Destroy(this.gameObject);
         }    
@@ -168,11 +168,11 @@ public class BubbleCollision : MonoBehaviour
         else if (collision.gameObject.CompareTag("CheyBall"))
         {
             //Chey lost, change scene to Molluwin
+            SceneManager.LoadScene("MolluWon");
             
         }
 
         //hit a bubble not in the same color, freeze in place unless its in the chamber
-        //|| !collision.CompareTag("Chey") || !collision.CompareTag("Mollu")
         else
         {
             //Debug.Log("I DIDNT HIT BALL");
