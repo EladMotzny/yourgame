@@ -94,7 +94,7 @@ public class MolluShoot : MonoBehaviour
         }
     }
 
-
+    /*
     private float forceCalc(float holdTime)
     {
         if (holdTime >= maxForceTime)
@@ -115,7 +115,7 @@ public class MolluShoot : MonoBehaviour
     {
         forceSpriteMask.alphaCutoff = 1 - force / maxForce;
     }
-
+    */
 
 
     public void CreateBubble(int next)

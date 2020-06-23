@@ -2371,8 +2371,6 @@ MonoBehaviour:
   rb: {fileID: 0}
   forceSpriteMask: {fileID: 282150922}
   rocketLauncher: {fileID: 678133854}
-  maxForceTime: 4
-  maxForce: 15
   speed: 6
   cd: {fileID: 0}
   colors:
@@ -4764,8 +4762,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 947951091
-  m_SortingOrder: 2
+  m_SortingLayerID: -1915686297
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1348798984
 RectTransform:
@@ -5798,6 +5796,7 @@ GameObject:
   - component: {fileID: 1738976620}
   - component: {fileID: 1738976622}
   - component: {fileID: 1738976621}
+  - component: {fileID: 1738976623}
   m_Layer: 5
   m_Name: RightMenuPanel
   m_TagString: Untagged
@@ -5871,6 +5870,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738976619}
   m_CullTransparentMesh: 0
+--- !u!223 &1738976623
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738976619}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &1767682037
 GameObject:
   m_ObjectHideFlags: 0
