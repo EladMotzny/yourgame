@@ -1,5 +1,9 @@
 # Treasure Fight!
 
+Play the game: https://mozy.itch.io/treasure-blast
+
+Or watch the trailer: https://www.youtube.com/watch?v=uHu_sIvoEBg&feature=youtu.be
+
 ![image](https://user-images.githubusercontent.com/33173449/83664048-24f56a80-a5d2-11ea-928a-8c9ec3700a9d.png)
 
 Meet Chey and mollu, once the best of friends but now bitter rivals fighting over booty and treasure
