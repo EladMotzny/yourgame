@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -141,6 +142,7 @@ public class MenuScript : MonoBehaviour
                 txt.gameObject.SetActive(false);
                 RightMenuPanel.gameObject.SetActive(true);
                 LeftMenuPanel.gameObject.SetActive(true);
+                
 
             }
 
@@ -150,6 +152,8 @@ public class MenuScript : MonoBehaviour
                 RightMenuPanel.gameObject.SetActive(false);
                 LeftMenuPanel.gameObject.SetActive(false);
                 txt.gameObject.SetActive(true);
+
+
             }
         }
 
@@ -159,6 +163,9 @@ public class MenuScript : MonoBehaviour
             {
                 RightMenuPanel.gameObject.SetActive(true);
                 LeftMenuPanel.gameObject.SetActive(true);
+                Time.timeScale = 0;
+                
+                OnGUI();
 
             }
 
@@ -167,6 +174,8 @@ public class MenuScript : MonoBehaviour
 
                 RightMenuPanel.gameObject.SetActive(false);
                 LeftMenuPanel.gameObject.SetActive(false);
+                Time.timeScale = 1;
+                
             }
         }
 
@@ -193,13 +202,16 @@ public class MenuScript : MonoBehaviour
 
         //the user presses a key
 
-        if (keyEvent.isKey && waitingForKey)
+
+        if (keyEvent.isKey && !waitingForKey)
 
         {
 
             newKey = keyEvent.keyCode; //Assigns newKey to the key user presses
 
             waitingForKey = false;
+
+            
 
         }
 
@@ -222,8 +234,11 @@ public class MenuScript : MonoBehaviour
     {
 
         if (!waitingForKey)
+        {
 
             StartCoroutine(AssignKey(keyName));
+           
+        }
 
     }
 
@@ -273,6 +288,7 @@ public class MenuScript : MonoBehaviour
     public IEnumerator AssignKey(string keyName)
 
     {
+        
 
         waitingForKey = true;
 
