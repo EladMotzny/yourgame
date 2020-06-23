@@ -10,7 +10,7 @@ public class MolluShoot : MonoBehaviour
     public SpriteMask forceSpriteMask;
     private float holdDownStartTime;//Time where you start holding the button down
     [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
-
+    private Vector3 rocketTemp;
     //[Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 4f;
     //[Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 15f;
     bool shoot;
@@ -49,7 +49,7 @@ public class MolluShoot : MonoBehaviour
         {
             if (rb != null)
             {
-                rb.velocity = rocketLauncher.transform.right * speed;
+                rb.velocity = rocketTemp * speed;
                 Invoke("activateCollision", 1);
             }
             else
@@ -81,7 +81,7 @@ public class MolluShoot : MonoBehaviour
             //send the calculated force to the shooting function with forceCalc here
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             //rb.AddForce(Vector2.up * 2); // , Impluse);
-            
+            rocketTemp = rocketLauncher.transform.right;
             //speed = forceCalc(holdTime);
             bubble.tag = "MolluBall" + Temptag;
             Invoke("activateCollision", 1);

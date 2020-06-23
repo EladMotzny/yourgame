@@ -4144,8 +4144,8 @@ MonoBehaviour:
   startPositionWall: {x: -0.14, y: 0.28}
   endPositionWall:
   - {x: -0.14, y: 2.29}
-  - {x: -0.14, y: 1.28}
-  - {x: -0.14, y: -0.63}
+  - {x: -0.14, y: 1}
+  - {x: -0.14, y: 2}
 --- !u!1 &1184849782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4721,7 +4721,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 947951091
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1348798984
 RectTransform:
@@ -4838,8 +4838,8 @@ MonoBehaviour:
   lerpTime: 1
   startPositionWall: {x: -0.14, y: -0.33}
   endPositionWall:
-  - {x: -0.14, y: -0.14}
-  - {x: -0.14, y: -1.47}
+  - {x: -0.14, y: -0.97}
+  - {x: -0.14, y: -2}
   - {x: -0.14, y: -3.2}
 --- !u!1 &1395770846
 GameObject:
