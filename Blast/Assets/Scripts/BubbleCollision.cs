@@ -127,11 +127,10 @@ public class BubbleCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
-           
-               // Debug.Log("Freeze Chey!");
-                
-                Debug.Log("Freeze Cheys ball!");
+
+            // Debug.Log("Freeze Chey!");
             iceSound.Play();
+                Debug.Log("Freeze Cheys ball!");
                 Instantiate(blackBall, this.transform.position, this.transform.rotation);
                 Destroy(this.gameObject);
            // }
@@ -226,7 +225,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesRight();
         }*/
 
-        else if (this.CompareTag("MolluBallRedBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")))
+        else if (this.CompareTag("MolluBallRedBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")) && this.transform.position.x > 0.14)
         {
             Debug.Log("I HIT NOT RED BALL");
 
@@ -235,7 +234,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesRight();
         }
 
-        else if (this.CompareTag("MolluBallBlueBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("RedBall")))
+        else if (this.CompareTag("MolluBallBlueBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("RedBall")) && this.transform.position.x > 0.14)
         {
             Debug.Log("I HIT NOT BLUE BALL");
 
@@ -244,7 +243,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesRight();
         }
 
-        else if (this.CompareTag("MolluBallGreenBall") && (collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")))
+        else if (this.CompareTag("MolluBallGreenBall") && (collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")) && this.transform.position.x > 0.14)
         {
             Debug.Log("I HIT NOT GREEN BALL");
 
@@ -253,7 +252,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesRight();
         }
 
-        else if (this.CompareTag("MolluBallYellowBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("BlueBall")))
+        else if (this.CompareTag("MolluBallYellowBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("BlueBall")) && this.transform.position.x > 0.14)
         {
             Debug.Log("I HIT NOT YELLOW BALL");
 
@@ -265,7 +264,7 @@ public class BubbleCollision : MonoBehaviour
 
 
 
-        else if (this.CompareTag("CheyBallRedBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")))
+        else if (this.CompareTag("CheyBallRedBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")) && this.transform.position.x < 0.14)
         {
             Debug.Log("I HIT NOT RED BALL");
 
@@ -274,7 +273,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesLeft();
         }
 
-        else if (this.CompareTag("CheyBallBlueBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("RedBall")))
+        else if (this.CompareTag("CheyBallBlueBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("RedBall")) && this.transform.position.x < 0.14)
         {
             Debug.Log("I HIT NOT BLUE BALL");
 
@@ -283,7 +282,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesLeft();
         }
 
-        else if (this.CompareTag("CheyBallGreenBall") && (collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")))
+        else if (this.CompareTag("CheyBallGreenBall") && (collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("YellowBall") || collision.gameObject.CompareTag("BlueBall")) && this.transform.position.x < 0.14)
         {
             Debug.Log("I HIT NOT GREEN BALL");
 
@@ -292,7 +291,7 @@ public class BubbleCollision : MonoBehaviour
             GameManager.GM.increaseNumberOfBubblesLeft();
         }
 
-        else if (this.CompareTag("CheyBallYellowBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("BlueBall")))
+        else if (this.CompareTag("CheyBallYellowBall") && (collision.gameObject.CompareTag("GreenBall") || collision.gameObject.CompareTag("RedBall") || collision.gameObject.CompareTag("BlueBall")) && this.transform.position.x < 0.14)
         {
             Debug.Log("I HIT NOT YELLOW BALL");
 
