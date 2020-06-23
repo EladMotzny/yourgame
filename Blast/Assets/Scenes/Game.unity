@@ -874,7 +874,7 @@ GameObject:
   - component: {fileID: 281924996}
   m_Layer: 0
   m_Name: TopEdge
-  m_TagString: edge
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1891,6 +1891,8 @@ MonoBehaviour:
   - {fileID: 2563574090624763027, guid: 8a08bde7da1b75d46af617c2f0c1c2b0, type: 3}
   - {fileID: 3472090044194919751, guid: c325fca0aa2bf8c43a651b25efabb86b, type: 3}
   - {fileID: 7257877670803497035, guid: 0e518363b46a2284193f2d46d555ecec, type: 3}
+  currentLevelIndexRight: 0
+  currentLevelIndexLeft: 0
   scoreLeft: 0
   scoreRight: 0
 --- !u!4 &623670580
@@ -2184,6 +2186,7 @@ MonoBehaviour:
   - {fileID: 3195340703784753991, guid: 4ebe4eeb96412b44bb0903c5104fdbed, type: 3}
   - {fileID: 81349416036547968, guid: 7b3d0e0af1d10c441939664e128d91d2, type: 3}
   - {fileID: 3699357172524559037, guid: 7971e66b20a7fbe4e8360570a4cd7240, type: 3}
+  GM: {fileID: 0}
   RightInfoPanel: {fileID: 1586030824}
 --- !u!1 &679284076
 GameObject:

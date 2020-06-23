@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
         numberOfBubblesLeft = levelsLeft[0].transform.childCount;
         Debug.Log("number of bubbles in left: " + numberOfBubblesLeft);
         numberOfBubblesRight = levelsRight[0].transform.childCount;
+        Debug.Log("number of bubbles in right: " + numberOfBubblesRight);
         currentLevelIndexLeft = 0;
 
 
@@ -94,9 +95,9 @@ public class GameManager : MonoBehaviour
     }
 
     //Will get called when a ball on the left side is hit
-    public void updateNumberOfBubblesLeft()
+    public void updateNumberOfBubblesLeft(int change)
     {
-        numberOfBubblesLeft--;
+        numberOfBubblesLeft+= change;
         //check if the game is over
         if(numberOfBubblesLeft <= 0)
         {
@@ -124,9 +125,20 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void updateNumberOfBubblesRight()
+    public void updateNumberOfBubblesRight(int change)
     {
-        numberOfBubblesRight--;
+
+        Debug.Log("change= " + change);
+        if (change == 1)
+        {
+            numberOfBubblesRight++;
+        }
+        else if (change== -1)
+        {
+            numberOfBubblesRight--;
+        }
+
+        Debug.Log("right amount of bubbles= " + numberOfBubblesRight);
         //check if the game is over
         if (numberOfBubblesRight <= 0)
         {

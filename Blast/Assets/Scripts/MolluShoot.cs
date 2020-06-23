@@ -84,7 +84,7 @@ public class MolluShoot : MonoBehaviour
             //rb.AddForce(Vector2.up * 2); // , Impluse);
             
             speed = forceCalc(holdTime);
-            bubble.tag = "CheyBall" + Temptag;
+            bubble.tag = "MolluBall" + Temptag;
             Invoke("activateCollision", 1);
             Invoke("nextBubbleAssign", 1);
 
