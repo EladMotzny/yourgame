@@ -24,8 +24,9 @@ TagManager:
   - CheyBallYellowBall
   - BlackBall
   - newBall
-  - CheyBall
   - MolluBall
+  - CheyBall
+  - top
   layers:
   - Default
   - TransparentFX

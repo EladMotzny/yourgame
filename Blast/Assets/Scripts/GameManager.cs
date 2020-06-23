@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -95,13 +99,13 @@ public class GameManager : MonoBehaviour
     }
 
     //Will get called when a ball on the left side is hit
-    public void updateNumberOfBubblesLeft(int change)
+    public void updateNumberOfBubblesLeft()
     {
-        numberOfBubblesLeft+= change;
+        numberOfBubblesLeft--;
         //check if the game is over
-        if(numberOfBubblesLeft <= 0)
+        if(numberOfBubblesLeft == 0)
         {
-            if(currentLevelIndexLeft <= levelsLeft.Length - 1)
+            if(currentLevelIndexLeft == levelsLeft.Length - 1)
             {
                 //left player win, change to left player win scene
             }
@@ -114,10 +118,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void increaseNumberOfBubblesLeft()
+    {
+        numberOfBubblesLeft++;
+        Debug.Log("left amount of bubbles= " + numberOfBubblesLeft);
+    }
+
     void LoadLevelLeft()
     {
         currentLevelIndexLeft++;
-        Instantiate(levelsLeft[currentLevelIndexLeft], Vector2.zero, Quaternion.identity);
+        Instantiate(levelsLeft[currentLevelIndexLeft], new Vector3 (0, -0.5f, 0), Quaternion.identity);
         numberOfBubblesLeft = levelsLeft[currentLevelIndexLeft].transform.childCount;
 
     }
@@ -125,91 +135,47 @@ public class GameManager : MonoBehaviour
 
 
 
-    public void updateNumberOfBubblesRight(int change)
+    public void updateNumberOfBubblesRight()
     {
+        numberOfBubblesRight--;
 
-        Debug.Log("change= " + change);
-        if (change == 1)
-        {
-            numberOfBubblesRight++;
-        }
-        else if (change== -1)
-        {
-            numberOfBubblesRight--;
-        }
-
-        Debug.Log("right amount of bubbles= " + numberOfBubblesRight);
+        
         //check if the game is over
-        if (numberOfBubblesRight <= 0)
+        if (numberOfBubblesRight==0)
         {
-            if (currentLevelIndexRight <= levelsRight.Length - 1)
+            if (currentLevelIndexRight == levelsRight.Length - 1)
             {
+               
                 //left player win, change to left player win scene
             }
             else
             {
                 //there are still levels left, load the next one
+                
                 LoadLevelRight();
+                
             }
         }
+    }
+
+    public void increaseNumberOfBubblesRight()
+    {
+        numberOfBubblesRight++;
+        Debug.Log("right amount of bubbles= " + numberOfBubblesRight);
     }
 
 
     void LoadLevelRight()
     {
+        Debug.Log("current level= " + currentLevelIndexRight);
         currentLevelIndexRight++;
-        Instantiate(levelsRight[currentLevelIndexRight], Vector2.zero, Quaternion.identity);
+        Instantiate(levelsRight[currentLevelIndexRight], new Vector3( 7 , -0.5f , 0), Quaternion.identity);
         numberOfBubblesRight = levelsRight[currentLevelIndexRight].transform.childCount;
+        Debug.Log("new child count = "+numberOfBubblesRight);
     }
     public void updateScoreRight(int score)
     {
         scoreRight += score;
-    }
-
-    public bool checkFreeBubbles(int color)
-    {
-        
-
-        Debug.Log("color= " + levelsRight[0].transform.childCount);
-        Transform level = levelsRight[currentLevelIndexRight];
-       
-        int count = 0;
-
-        for (int i = 0; i < level.childCount; i++)
-
-        {
-            Transform child = level.GetChild(i);
-            if(child.CompareTag("RedBall") && color==0)
-            {
-                Debug.Log("I am in");
-                count++;
-            }
-            if (child.CompareTag("BlueBall") && color == 1)
-            {
-                count++;
-            }
-            if (child.CompareTag("GreenBall") && color == 2)
-            {
-                count++;
-            }
-            if (child.CompareTag("YellowBall") && color == 3)
-            {
-                count++;
-            }
-
-        }
-
-        Debug.Log("count= " + count);
-        if (count > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-               
     }
     
 }
