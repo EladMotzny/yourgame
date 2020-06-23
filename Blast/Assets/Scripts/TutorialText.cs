@@ -73,22 +73,32 @@ public class TutorialText : MonoBehaviour
                 Destroy(instance);
                 instance = Instantiate(prefabs[1]);
                 break;
-            case 2:
+            case 3:
                 Debug.Log("Load CharControl");
                 Destroy(instance);
                 instance = Instantiate(prefabs[2]);
                 break;
-            case 4:
+            case 5:
                 Debug.Log("Load Against");
                 Destroy(instance);
                 instance = Instantiate(prefabs[3]);
                 break;
-            case 5:
+            case 7:
                 Debug.Log("Load Wall");
                 Destroy(instance);
                 instance = Instantiate(prefabs[4]);
                 break;
             case 8:
+                Debug.Log("Load Blackball");
+                Destroy(instance);
+                instance = Instantiate(prefabs[5]);
+                break;
+            case 9:
+                Debug.Log("Load Lose");
+                Destroy(instance);
+                instance = Instantiate(prefabs[6]);
+                break;
+            case 11:
                 Debug.Log("Load scene");
                 welcomeScene();
                 break;

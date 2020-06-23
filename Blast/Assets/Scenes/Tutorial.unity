@@ -1145,27 +1145,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1761474552}
   sentences:
-  - 'Meet Chey and mollu, once the best of friends but now bitter rivals fighting
-    over booty and treasure '
-  - 'They decided to have one last competition for the biggest treasure of all! '
-  - 'The winner is whoever manages to blow up all the bubbles on his side of the
-    screen '
+  - Meet Chey and mollu, once the best of friends but now bitter rivals fighting
+    over booty and treasure
+  - They decided to have one last competition for the biggest treasure of all!
+  - The winner is whoever manages to blow up all the bubbles on his side of the screen.
+  - Hit a bubble with the same color to destroy it
   - Use your arrow keys to move and aim up and down or W A S D and press left CTRL
     or space bar to charge your shot (press ESC in game to change keys)
-  - 'But of course... A pirate without cheating is like a ship without a crew... '
-  - 'Chey and mollu will do anything in their power to win! Including shooting at
-    eachother '
-  - 'Every now and then the gate between the two will open, which will give them
-    the opportunity to distrupt one another '
-  - 'Be careful not to lose all of your HP or you might lose! '
+  - But of course... A pirate without cheating is like a ship without a crew...
+  - Chey and mollu will do anything in their power to win!
+  - They both sabotaged each others first bullet to be a faulty one
+  - Every now and then the gate between the two will open, which will give them the
+    opportunity to distrupt one another
+  - Use that opportunity to shoot at your rivals board to color his bubbles in black!
+    Its much stronger than your regular bubble
+  - Be careful! If the bubbles reach over to you, its game over
   - And with that.. We wish them the best of luck!
   prefabs:
   - {fileID: 7044996895646159019, guid: e444717df78f89142a636ce948dcc0b8, type: 3}
   - {fileID: 5928783188349872537, guid: 657702cfb9ce6174780331032b159733, type: 3}
   - {fileID: 423451199256844865, guid: 011a637f12924b840be432b8606cf308, type: 3}
   - {fileID: 5188361155031502298, guid: e6bddf97d0d4dfd4e93ae0628692f9d0, type: 3}
-  - {fileID: 591694888381754412, guid: f9657d45cc79f3f47b7e72bbe45be3a3, type: 3}
-  typeSpeed: 0.05
+  - {fileID: 6903398084640532658, guid: 52d30f172b66ebb4d868f35f543f9ec5, type: 3}
+  - {fileID: 5981724604235296537, guid: 3fd0e6f302ed52c45bf9d610ee0d9355, type: 3}
+  - {fileID: 5857258287374584053, guid: d5add330dce4df547bf10f99f8a9ca5f, type: 3}
+  typeSpeed: 0.03
   continueButton: {fileID: 380953058}
 --- !u!82 &2082013249
 AudioSource:
