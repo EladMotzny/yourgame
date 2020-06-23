@@ -4339,9 +4339,9 @@ MonoBehaviour:
   lerpTime: 1
   startPositionWall: {x: -0.14, y: 0.28}
   endPositionWall:
-  - {x: -0.14, y: 2.29}
-  - {x: -0.14, y: 1}
-  - {x: -0.14, y: 2}
+  - {x: -0.14, y: 2.76}
+  - {x: -0.14, y: 3.71}
+  - {x: -0.14, y: 5.54}
 --- !u!1 &1184849782
 GameObject:
   m_ObjectHideFlags: 0
@@ -5034,9 +5034,9 @@ MonoBehaviour:
   lerpTime: 1
   startPositionWall: {x: -0.14, y: -0.33}
   endPositionWall:
-  - {x: -0.14, y: -0.97}
-  - {x: -0.14, y: -2}
-  - {x: -0.14, y: -3.2}
+  - {x: -0.14, y: -3.18}
+  - {x: -0.14, y: -0.33}
+  - {x: -0.14, y: -2.08}
 --- !u!1 &1395770846
 GameObject:
   m_ObjectHideFlags: 0
