@@ -6,8 +6,7 @@ using UnityEngine;
 public class CheyShoot : MonoBehaviour
 {
     public Rigidbody2D rb;
-    private SpriteMask forceSpriteMask;
-    private float holdDownStartTime;//Time where you start holding the button down
+ 
     [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
     private Vector3 rocketTemp;
     //[Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 2f;
@@ -29,7 +28,8 @@ public class CheyShoot : MonoBehaviour
 
         nextBubble = createNextLeftBubble();
 
-        CreateBubble(UnityEngine.Random.Range(0, 4));
+
+        nextBubbleAssign();
 
     }
 
@@ -54,18 +54,7 @@ public class CheyShoot : MonoBehaviour
             }
 
         }
-        if (Input.GetKeyDown(GameManager.GM.LeftPlayershoot))//Start charging
-        {
-            //Debug.Log("Button down");
-            holdDownStartTime = Time.time;
-        }
-        /*if (Input.GetKey(GameManager.GM.LeftPlayershoot))//Mid charge
-        {
-            //Debug.Log("charging...");
-            float currHoldTime = Time.time - holdDownStartTime;
-
-            //ShowForce(forceCalc(currHoldTime));
-        }*/
+      
         if (Input.GetKey(GameManager.GM.LeftPlayershoot) && !shoot)//End charge
         {
             shoot = true;
@@ -83,27 +72,7 @@ public class CheyShoot : MonoBehaviour
 
     }
 
-    /*
-    private float forceCalc(float holdTime)
-    {
-        if (holdTime >= maxForceTime)
-        {
-            holdTime = maxForceTime;
-        }
-        float force = holdTime / maxForceTime * maxForce;
-        return force;
-
-    }
-
-    private void HideForce()
-    {
-        forceSpriteMask.alphaCutoff = 1;
-    }
-
-    public void ShowForce(float force)
-    {
-        forceSpriteMask.alphaCutoff = 1 - force / maxForce;
-    }*/
+    
 
     public void CreateBubble(int next)
     {

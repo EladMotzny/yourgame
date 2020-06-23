@@ -1,7 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Quaternion = UnityEngine.Quaternion;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,8 +32,8 @@ public class GameManager : MonoBehaviour
     public int numberOfBubblesLeft;
     public Transform[] levelsRight;
     public Transform[] levelsLeft;
-    private int currentLevelIndexRight;
-    private int currentLevelIndexLeft;
+    public int currentLevelIndexRight;
+    public int currentLevelIndexLeft;
     public int scoreLeft;
     public int scoreRight;
 
@@ -76,6 +81,7 @@ public class GameManager : MonoBehaviour
         numberOfBubblesLeft = levelsLeft[0].transform.childCount;
         Debug.Log("number of bubbles in left: " + numberOfBubblesLeft);
         numberOfBubblesRight = levelsRight[0].transform.childCount;
+        Debug.Log("number of bubbles in right: " + numberOfBubblesRight);
         currentLevelIndexLeft = 0;
 
 
@@ -97,9 +103,9 @@ public class GameManager : MonoBehaviour
     {
         numberOfBubblesLeft--;
         //check if the game is over
-        if(numberOfBubblesLeft <= 0)
+        if(numberOfBubblesLeft == 0)
         {
-            if(currentLevelIndexLeft <= levelsLeft.Length - 1)
+            if(currentLevelIndexLeft == levelsLeft.Length - 1)
             {
                 //left player win, change to left player win scene
             }
@@ -112,10 +118,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void increaseNumberOfBubblesLeft()
+    {
+        numberOfBubblesLeft++;
+        Debug.Log("left amount of bubbles= " + numberOfBubblesLeft);
+    }
+
     void LoadLevelLeft()
     {
         currentLevelIndexLeft++;
-        Instantiate(levelsLeft[currentLevelIndexLeft], Vector2.zero, Quaternion.identity);
+        Instantiate(levelsLeft[currentLevelIndexLeft], new Vector3 (0, -0.5f, 0), Quaternion.identity);
         numberOfBubblesLeft = levelsLeft[currentLevelIndexLeft].transform.childCount;
 
     }
@@ -126,27 +138,40 @@ public class GameManager : MonoBehaviour
     public void updateNumberOfBubblesRight()
     {
         numberOfBubblesRight--;
+
+        
         //check if the game is over
-        if (numberOfBubblesRight <= 0)
+        if (numberOfBubblesRight==0)
         {
-            if (currentLevelIndexRight <= levelsRight.Length - 1)
+            if (currentLevelIndexRight == levelsRight.Length - 1)
             {
+               
                 //left player win, change to left player win scene
             }
             else
             {
                 //there are still levels left, load the next one
+                
                 LoadLevelRight();
+                
             }
         }
+    }
+
+    public void increaseNumberOfBubblesRight()
+    {
+        numberOfBubblesRight++;
+        Debug.Log("right amount of bubbles= " + numberOfBubblesRight);
     }
 
 
     void LoadLevelRight()
     {
+        Debug.Log("current level= " + currentLevelIndexRight);
         currentLevelIndexRight++;
-        Instantiate(levelsRight[currentLevelIndexRight], Vector2.zero, Quaternion.identity);
+        Instantiate(levelsRight[currentLevelIndexRight], new Vector3( 7 , -0.5f , 0), Quaternion.identity);
         numberOfBubblesRight = levelsRight[currentLevelIndexRight].transform.childCount;
+        Debug.Log("new child count = "+numberOfBubblesRight);
     }
     public void updateScoreRight(int score)
     {
