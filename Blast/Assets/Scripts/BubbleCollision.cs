@@ -11,9 +11,10 @@ public class BubbleCollision : MonoBehaviour
     //public GameManager GM;
     public Transform blackBall;
     public Transform[] colors;
+    public AudioSource iceSound;
     void Start()
     {
-        
+        iceSound = GameManager.GM.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -86,8 +87,9 @@ public class BubbleCollision : MonoBehaviour
 
            
                // Debug.Log("Freeze Chey!");
-           
+                
                 Debug.Log("Freeze Cheys ball!");
+            iceSound.Play();
                 Instantiate(blackBall, this.transform.position, this.transform.rotation);
                 Destroy(this.gameObject);
            // }
@@ -99,10 +101,10 @@ public class BubbleCollision : MonoBehaviour
         {
             Destroy(collision.gameObject);
 
-            
-               // Debug.Log("Freeze Mollu!");
-            
-                Debug.Log("Freeze Mollus ball!");
+
+            // Debug.Log("Freeze Mollu!");
+            iceSound.Play();
+            Debug.Log("Freeze Mollus ball!");
                 Instantiate(blackBall, this.transform.position, this.transform.rotation);
                 Destroy(this.gameObject);
             
