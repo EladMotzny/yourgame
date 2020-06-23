@@ -27,101 +27,54 @@ public class BubbleCollision : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //if ball hit edge or ball in barrel, destroy what hit
-        if (collision.gameObject.CompareTag("edge"))
+        if (collision.gameObject.CompareTag("edge") && (!this.gameObject.CompareTag("CheyBall") || !this.gameObject.CompareTag("MolluBall")))
         { 
             Destroy(this.gameObject);
-        }
-        
-
-        
+        }    
+        /*
         //Hit same color ball which has the same tag -DO NOT DESTROY
         else if (collision.gameObject.CompareTag(gameObject.tag))
         {
             Debug.Log("Same color collision detected!");
-            //Destroy(this.gameObject);
-        }
+            Destroy(this.gameObject);
+        }*/
 
 
 
         //Mollu or Chey hit a red ball on their side of the game map
         else if (collision.gameObject.CompareTag("MolluBallRedBall") && (this.gameObject.CompareTag("RedBall") || this.gameObject.CompareTag("MolluBallRedBall")) && this.transform.position.x > 0.14 || collision.gameObject.CompareTag("CheyBallRedBall") && (this.gameObject.CompareTag("RedBall") || this.gameObject.CompareTag("CheyBallRedBall")) && this.transform.position.x < 0.14)
         {
-            if (this.transform.position.x > 0.14)
-            {
-                Debug.Log("change red++");
-                GameManager.GM.updateNumberOfBubblesRight(-1);
-            }
-            else
-            {
-                Debug.Log("change red--");
-                GameManager.GM.updateNumberOfBubblesLeft(-1);
-            }
             //Debug.Log("Destroy red ball!");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-            
-       
+            // GM.updateNumberOfBubblesLeft();
         }
-
 
         //Mollu or Chey hit a blue ball on their side of the game map
         else if (collision.gameObject.CompareTag("MolluBallBlueBall") && (this.gameObject.CompareTag("BlueBall") || this.gameObject.CompareTag("MolluBallBlueBall")) && this.transform.position.x > 0.14 || collision.gameObject.CompareTag("CheyBallBlueBall") && (this.gameObject.CompareTag("BlueBall") || this.gameObject.CompareTag("CheyBallBlueBall")) && this.transform.position.x < 0.14)
         {
-            if (this.transform.position.x > 0.14)
-            {
-                Debug.Log("change blue++");
-                GameManager.GM.updateNumberOfBubblesRight(-1);
-            }
-            else
-            {
-                Debug.Log("change blue--");
-                GameManager.GM.updateNumberOfBubblesLeft(-1);
-            }
             //Debug.Log("Destroy blue ball!");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             // GM.updateNumberOfBubblesLeft();
-           
         }
 
         //Mollu or Chey hit a green ball on their side of the game map
         else if (collision.gameObject.CompareTag("MolluBallGreenBall") && (this.gameObject.CompareTag("GreenBall") || this.gameObject.CompareTag("MolluBallGreenBall")) && this.transform.position.x > 0.14 || collision.gameObject.CompareTag("CheyBallGreenBall") && (this.gameObject.CompareTag("GreenBall") || this.gameObject.CompareTag("CheyBallGreenBall")) && this.transform.position.x < 0.14)
         {
-            if (this.transform.position.x > 0.14)
-            {
-                Debug.Log("change green++");
-                GameManager.GM.updateNumberOfBubblesRight(-1);
-            }
-            else
-            {
-                Debug.Log("change green--");
-                GameManager.GM.updateNumberOfBubblesLeft(-1);
-            }
             //Debug.Log("Destroy green ball!");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             // GM.updateNumberOfBubblesLeft();
-          
         }
 
         //Mollu or Chey hit a yellow ball on their side of the game map
         else if (collision.gameObject.CompareTag("MolluBallYellowBall") && (this.gameObject.CompareTag("YellowBall") || this.gameObject.CompareTag("MolluBallYellowBall")) && this.transform.position.x > 0.14 || collision.gameObject.CompareTag("CheyBallYellowBall") && (this.gameObject.CompareTag("YellowBall") || this.gameObject.CompareTag("CheyBallYellowBall")) && this.transform.position.x < 0.14)
         {
-            if (this.transform.position.x > 0.14)
-            {
-                Debug.Log("change yellow++");
-                GameManager.GM.updateNumberOfBubblesRight(-1);
-            }
-            else
-            {
-                Debug.Log("change yellow--");
-                GameManager.GM.updateNumberOfBubblesLeft(-1);
-            }
             //Debug.Log("Destroy yellow ball!");
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             // GM.updateNumberOfBubblesLeft();
-            
         }
         
 
@@ -178,7 +131,7 @@ public class BubbleCollision : MonoBehaviour
                 Instantiate(colors[3], this.transform.position, this.transform.rotation);
             }
             Destroy(this.gameObject);
-           
+            // GM.updateNumberOfBubblesLeft();
         }
 
 
@@ -204,7 +157,7 @@ public class BubbleCollision : MonoBehaviour
                 Instantiate(colors[3], this.transform.position, this.transform.rotation);
             }
             Destroy(this.gameObject);
-          
+            // GM.updateNumberOfBubblesLeft();
         }
 
         else if (collision.gameObject.CompareTag("MolluBall"))
@@ -215,24 +168,15 @@ public class BubbleCollision : MonoBehaviour
         else if (collision.gameObject.CompareTag("CheyBall"))
         {
             //Chey lost, change scene to Molluwin
+            SceneManager.LoadScene("MolluWon");
             
         }
 
         //hit a bubble not in the same color, freeze in place unless its in the chamber
-        //|| !collision.CompareTag("Chey") || !collision.CompareTag("Mollu")
-        else 
+        else
         {
-            Debug.Log("I DIDNT HIT BALL");
+            //Debug.Log("I DIDNT HIT BALL");
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            if (collision.transform.position.x > 0.14)
-            {
-                Debug.Log("change++");
-                GameManager.GM.updateNumberOfBubblesRight(1);
-            }
-            else
-            {
-                GameManager.GM.updateNumberOfBubblesLeft(1);
-            }
         }
         
 

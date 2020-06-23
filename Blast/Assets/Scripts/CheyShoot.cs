@@ -10,10 +10,10 @@ public class CheyShoot : MonoBehaviour
     private float holdDownStartTime;//Time where you start holding the button down
     [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
 
-    [Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 2f;
-    [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
+    //[Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 2f;
+    //[Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 500f;
     bool shoot;
-    public float speed = 0.05f;
+    public float speed = 7f;
     Transform bubble;
     private string Temptag;
     public CircleCollider2D cd;
@@ -59,23 +59,23 @@ public class CheyShoot : MonoBehaviour
             //Debug.Log("Button down");
             holdDownStartTime = Time.time;
         }
-        if (Input.GetKey(GameManager.GM.LeftPlayershoot))//Mid charge
+        /*if (Input.GetKey(GameManager.GM.LeftPlayershoot))//Mid charge
         {
             //Debug.Log("charging...");
             float currHoldTime = Time.time - holdDownStartTime;
 
             //ShowForce(forceCalc(currHoldTime));
-        }
-        if (Input.GetKeyUp(GameManager.GM.LeftPlayershoot) && !shoot)//End charge
+        }*/
+        if (Input.GetKey(GameManager.GM.LeftPlayershoot) && !shoot)//End charge
         {
             shoot = true;
-            float holdTime = Time.time - holdDownStartTime;
+            //float holdTime = Time.time - holdDownStartTime;
             //Debug.Log("Button up");
             //send the calculated force to the shooting function with forceCalc here
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             // rb.AddForce(Vector2.up * 2); // , Impluse);
             
-            speed = forceCalc(holdTime);
+            //speed = forceCalc(holdTime);
             bubble.tag = "CheyBall" + Temptag;
             Invoke("activateCollision", 1);
             Invoke("nextBubbleAssign", 1);
@@ -83,7 +83,7 @@ public class CheyShoot : MonoBehaviour
 
     }
 
-
+    /*
     private float forceCalc(float holdTime)
     {
         if (holdTime >= maxForceTime)
@@ -103,7 +103,7 @@ public class CheyShoot : MonoBehaviour
     public void ShowForce(float force)
     {
         forceSpriteMask.alphaCutoff = 1 - force / maxForce;
-    }
+    }*/
 
     public void CreateBubble(int next)
     {

@@ -11,15 +11,14 @@ public class MolluShoot : MonoBehaviour
     private float holdDownStartTime;//Time where you start holding the button down
     [Tooltip("Launcher")] [SerializeField] GameObject rocketLauncher;
 
-    [Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 4f;
-    [Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 15f;
+    //[Tooltip("Time to get to max force")] [SerializeField] float maxForceTime = 4f;
+    //[Tooltip("Maximum force to launch the missle at")] [SerializeField] float maxForce = 15f;
     bool shoot;
-    public float speed = 0.05f;
+    public float speed = 7f;
     Transform bubble;
     private string Temptag;
     public CircleCollider2D cd;
     public Transform[] colors;
-    public GameManager GM;
 
 
     public GameObject RightInfoPanel;
@@ -65,25 +64,25 @@ public class MolluShoot : MonoBehaviour
             holdDownStartTime = Time.time;
         }
 
-        if (Input.GetKey(GameManager.GM.RightPlayershoot))//Mid charge
+        /*if (Input.GetKey(GameManager.GM.RightPlayershoot))//Mid charge
         {
             //Debug.Log("charging...");
-            float currHoldTime = Time.time - holdDownStartTime;
+            //float currHoldTime = Time.time - holdDownStartTime;
 
            // ShowForce(forceCalc(currHoldTime));
-        }
+        }*/
 
-        if (Input.GetKeyUp(GameManager.GM.RightPlayershoot) && !shoot)//End charge
+        if (Input.GetKey(GameManager.GM.RightPlayershoot) && !shoot)//End charge
         {
             shoot = true;
-            float holdTime = Time.time - holdDownStartTime;
+            //float holdTime = Time.time - holdDownStartTime;
             //Debug.Log("Button up");
 
             //send the calculated force to the shooting function with forceCalc here
             // var vec = new Vector3(10, 10,10); //x: float, y: float, z: float)
             //rb.AddForce(Vector2.up * 2); // , Impluse);
             
-            speed = forceCalc(holdTime);
+            //speed = forceCalc(holdTime);
             bubble.tag = "MolluBall" + Temptag;
             Invoke("activateCollision", 1);
             Invoke("nextBubbleAssign", 1);
@@ -93,7 +92,7 @@ public class MolluShoot : MonoBehaviour
         }
     }
 
-
+    /*
     private float forceCalc(float holdTime)
     {
         if (holdTime >= maxForceTime)
@@ -104,7 +103,7 @@ public class MolluShoot : MonoBehaviour
         return force;
 
     }
-
+    
     private void HideForce()
     {
         forceSpriteMask.alphaCutoff = 1;
@@ -114,7 +113,7 @@ public class MolluShoot : MonoBehaviour
     {
         forceSpriteMask.alphaCutoff = 1 - force / maxForce;
     }
-
+    */
 
 
     public void CreateBubble(int next)
@@ -152,13 +151,7 @@ public class MolluShoot : MonoBehaviour
     //create the next ball
     public Transform createNextRightBubble()
     {
-        
         rand = UnityEngine.Random.Range(0, 4);
-        bool exist = GameManager.GM.checkFreeBubbles(rand);
-        Debug.Log("bool= " + exist.ToString());
-        
-
-
         Transform newBubble = Instantiate(colors[rand], RightInfoPanel.transform.GetChild(1).position, RightInfoPanel.transform.GetChild(1).rotation);
 
 
@@ -187,8 +180,6 @@ public class MolluShoot : MonoBehaviour
         nextBubble = createNextRightBubble();
         
     }
-
-   
 }
 
 
